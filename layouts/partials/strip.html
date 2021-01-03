@@ -1,0 +1,19 @@
+{{if .Site.Data.features}}
+<div class="bg-gray-200 py-6 md:py-10">
+    <div class="container mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {{ range .Site.Data.features }}
+            <div class="bg-white text-center mx-2 px-4 py-10 hover">
+                <div class="p-1">
+                    {{if .icon }}
+                    <span class="{{ .icon }} text-5xl"></span>
+                    {{ end }}
+                    <h3 class="text-2xl">{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{end}}

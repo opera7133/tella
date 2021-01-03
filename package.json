@@ -1,0 +1,28 @@
+{
+    "name": "tella",
+    "version": "0.0.1",
+    "description": "Simple, Light, Responsive",
+    "main": "index.js",
+    "repository": "https://github.com/unls/techhugo",
+    "author": "wamo <ainznino@pm.me>",
+    "license": "MIT",
+    "scripts": {
+        "start": "hugo --gc"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^2.3.0",
+        "autoprefixer": "^9.8.6",
+        "postcss": "^7.0.35",
+        "postcss-cli": "^7.1.2",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^1.9.6",
+        "vue": "^2.4.2",
+        "vuex": "^2.4.0"
+    },
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ]
+}

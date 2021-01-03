@@ -1,0 +1,14 @@
+{{ $name := .Get "src" }}
+{{ $extention := .Get "ext" | default "jpg" }}
+{{ $alt := .Get "alt" }}
+{{ $width := .Get "width" | default "auto" }}
+{{ $minipath := printf "/posts/%s/%s.%s" .Page.File.ContentBaseName $name $extention }}
+{{ $path := printf "content%s.webp" $minipath }}
+{{- if (fileExists $path) -}}
+<picture>
+    <source type="image/webp" srcset="{{ $minipath }}.webp">
+    <img src="{{ $minipath }}" />
+</picture>
+{{- else -}}
+<img src="{{ $minipath }}" />
+{{- end -}}
