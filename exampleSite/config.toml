@@ -1,0 +1,74 @@
+baseURL = "https://tella.netlify.app"
+title = "Tella"
+author = "wamo"
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+theme = "tella"
+enableRobotsTXT = true
+
+# Please enable this feature if the site is available in Japanese, Chinese or Korean.
+#hasCJKLanguage = true
+
+# If you're using Google Analytics, you can enable this feature.
+#googleAnalytics = "UA-12345678-1"
+
+# Disqus Comment System
+#disqusShortname = ""
+
+[params]
+
+  [params.logo]
+    main = "img/logo/logo.svg"
+    alt = "Tella Logo"
+
+  [params.site]
+    name = "Tella"
+
+  [params.homepage_meta_tags]
+    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_og_title = "Tella"
+    meta_og_type = "website"
+    meta_og_url = "https://tella.netlify.app"
+    meta_og_image = "https://tella.netlify.app/img/tn.png"
+    meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_twitter_card = "summary_large_image"
+    meta_twitter_site = "@scgame_m"
+    meta_twitter_creator = "@scgame_m"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "products"
+    name = "Products"
+    url = "/products/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 2
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
+
+  # Footer Menu
+  [[menu.footer]]
+    name = "Home"
+    url = "/"
+      weight = 1
+
+  [[menu.footer]]
+    name = "Github"
+    url = "https://github.com/opera7133/tella"
+      weight = 2

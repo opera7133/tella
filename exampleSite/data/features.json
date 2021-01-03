@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Responsive",
+    "description": "You don't need a SP site. You can use it as is.",
+    "icon": "icon-desktop_windows"
+  },
+  {
+    "title": "Features",
+    "description": "You can add or remove features at will.",
+    "icon": "icon-create"
+  },
+  {
+    "title": "Github",
+    "description": "Please fork the Github repository and contribute to this theme!",
+    "icon": "icon-github"
+  }
+]

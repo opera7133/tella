@@ -1,0 +1,26 @@
+{
+    "name": "tella",
+    "version": "0.0.1",
+    "description": "Simple, Light, Responsive",
+    "main": "index.js",
+    "repository": "https://github.com/opera7133/tella",
+    "author": "wamo <ainznino@pm.me>",
+    "license": "MIT",
+    "scripts": {
+        "start": "hugo --gc"
+    },
+    "devDependencies": {
+        "@fullhuman/postcss-purgecss": "^2.3.0",
+        "autoprefixer": "^9.8.6",
+        "postcss": "^7.0.32",
+        "postcss-cli": "^7.1.1",
+        "postcss-import": "^12.0.1",
+        "tailwindcss": "^1.6.2"
+    },
+    "browserslist": [
+        "last 1 version",
+        "> 1%",
+        "maintained node versions",
+        "not dead"
+    ]
+}
