@@ -3,21 +3,20 @@
     "version": "0.0.1",
     "description": "Simple, Light, Responsive",
     "main": "index.js",
-    "repository": "https://github.com/unls/techhugo",
+    "repository": "https://github.com/opera7133/tella",
     "author": "wamo <ainznino@pm.me>",
     "license": "MIT",
     "scripts": {
         "start": "hugo --gc"
     },
     "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^2.3.0",
-        "autoprefixer": "^9.8.6",
-        "postcss": "^7.0.35",
-        "postcss-cli": "^7.1.2",
-        "postcss-import": "^12.0.1",
-        "tailwindcss": "^1.9.6",
-        "vue": "^2.4.2",
-        "vuex": "^2.4.0"
+        "@fullhuman/postcss-purgecss": "^3.1.3",
+        "@tailwindcss/typography": "^0.3.1",
+        "autoprefixer": "^10.2.0",
+        "postcss": "^8.2.3",
+        "postcss-cli": "^8.3.1",
+        "postcss-import": "^14.0.0",
+        "tailwindcss": "^2.0.2"
     },
     "browserslist": [
         "last 1 version",

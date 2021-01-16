@@ -3,12 +3,12 @@
     <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="{{ "favicon-32x32.png" | relURL }}">
-    {{- $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") -}}
-    {{- if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
+    {{ if .Site.IsServer }}
+        <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
     {{ else }}
-    {{- $styles := $styles| minify | fingerprint | resources.PostProcess -}}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}">
-    {{ end -}}
+        {{ $styles := $styles| minify | fingerprint | resources.PostProcess }}
+        <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+    {{ end }}
     <link rel="stylesheet" href="{{ "/css/swiper-bundle.min.css" | relURL }}">
     <link href="{{ "/css/style.min.css" | relURL }}" rel="stylesheet" type="text/css">

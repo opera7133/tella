@@ -72,3 +72,6 @@ enableRobotsTXT = true
     name = "Github"
     url = "https://github.com/opera7133/tella"
       weight = 2
+
+[build]
+  writeStats = true
