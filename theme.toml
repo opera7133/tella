@@ -3,8 +3,8 @@ license = "MIT"
 licenselink = "https://github.com/opera7133/tella/blob/master/LICENSE"
 description = "Simple, Light, Responsive"
 homepage = "https://github.com/opera7133/tella"
-tags = ["light", "simple", "blog", "clean", "tailwindcss", "responsive"]
-features = [""]
+tags = ["light", "simple", "blog", "clean", "tailwindcss", "responsive", "company", "contact form", "modern", "slide"]
+features = ["blog", "slides", "contact form"]
 min_version = "0.69"
 
 [author]
