@@ -27,6 +27,29 @@
         {{- partial "recent.html" . -}}
     </div>
     {{- partial "footer.html" . -}}
+    <script src="{{ "/js/swiper-bundle.min.js" | relURL }}"></script>
+    <script>
+        var mySwiper = new Swiper(".swiper-container", {
+            // Optional parameters
+            direction: "horizontal",
+            loop: true,
+            speed: 550,
+            autoplay: {
+                delay: 6000,
+            },
+
+            // If we need pagination
+            pagination: {
+                el: ".swiper-pagination",
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 
 </html>

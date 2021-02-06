@@ -8,6 +8,7 @@
 <meta name="twitter:title" content="{{ .Title }}">
 <link rel="preload" href="{{ "/css/monokai-sublime.min.css" | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="{{ "/css/sweetalert2.min.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 {{ end }}
 {{ define "main" }}
 <div class="mx-auto my-10 max-w-6xl">
@@ -63,8 +64,8 @@
                     <span class="icon-line text-lg mr-2"></span>LINE
                 </div>
             </a>
-            <a href="javascript:void(0);" class="share-button url" title="Copy to Clipboard"
-                data-clipboard-text="{{ .Title }} {{ .Permalink }}">
+            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+                data-clipboard-text="{{ .Title }} {{ .Permalink }}" id="url">
                 <div class="text-white text-center">
                     <span class="icon-link text-lg mr-2"></span>Copy
                 </div>
