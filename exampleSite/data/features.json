@@ -12,6 +12,7 @@
   {
     "title": "Github",
     "description": "Please fork the Github repository and contribute to this theme!",
-    "icon": "icon-github"
+    "icon": "icon-github",
+    "link": "https://github.com/opera7133/tella"
   }
 ]
