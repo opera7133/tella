@@ -25,6 +25,10 @@ enableRobotsTXT = true
   [params.site]
     name = "Tella"
 
+  [params.icon]
+    #If you want to use FontAwesome, set this parameter to true.
+    fa5 = true
+
   [params.homepage_meta_tags]
     meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
     meta_og_title = "Tella"
