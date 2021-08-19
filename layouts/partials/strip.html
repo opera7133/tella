@@ -4,13 +4,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {{ range .Site.Data.features }}
             {{if .link }}<a href="{{ .link }}">{{ end }}
-                <div class="bg-white text-center mx-2 px-4 py-10 hover">
+                <div class="bg-white text-center mx-2 px-4 py-10 duration-300 transform hover:-translate-y-1 hover:shadow-lg">
                     <div class="p-1">
                         {{if .icon }}
                         <span class="{{ .icon }} text-5xl"></span>
                         {{ end }}
                         <h2 class="text-2xl">{{ .title }}</h2>
-                        <p>{{ .description | markdownify }}</p>
+                        <p class="sans">{{ .description | markdownify }}</p>
                     </div>
                 </div>
                 {{if .link }}</a>{{ end }}

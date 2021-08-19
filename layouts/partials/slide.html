@@ -1,8 +1,5 @@
-<!-- スライダーのメインコンテナの div 要素 -->
 <div class="swiper-container">
-    <!-- ラッパーの（スライドを囲む） div 要素 -->
     <div class="swiper-wrapper">
-        <!-- それぞれのスライドの div 要素 -->
         {{ range .Site.Data.slide }}
         <div class="swiper-slide">
             <img src="{{ .image }}" alt="">
@@ -12,10 +9,6 @@
         </div>
         {{ end }}
     </div>
-    <!-- ページネーションの div 要素 -->
-    <div class="swiper-pagination"></div>
-
-    <!-- ナビゲーションボタンの div 要素-->
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
 </div>

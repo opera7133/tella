@@ -1,9 +1,9 @@
 <footer class="bg-gray-100">
+    {{ if not .IsHome }}
     <script src="{{ "/js/clipboard.min.js" | relURL }}"></script>
     <script src="{{ "/js/highlight.min.js" | relURL }}"></script>
     <script src="{{ "/js/highlightjs-line-numbers.min.js" | relURL }}"></script>
     <script src="{{ "/js/sweetalert2.min.js" | relURL }}"></script>
-    <script src="{{ "/js/script.min.js" | relURL }}"></script>
     <script>
         hljs.initHighlightingOnLoad();
         hljs.initLineNumbersOnLoad();
@@ -17,7 +17,26 @@
             })
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    {{ end }}
+    <script>
+        function toggleNav() {
+            var hamburger = document.getElementById("hamburgerbtn");
+            var overlay = document.getElementById("overlay");
+            var body = document.body;
+    
+            hamburger.addEventListener("click", function () {
+                overlay.classList.toggle("open");
+                hamburger.classList.toggle("is-open");
+                body.classList.toggle("scroll-lock");
+            });
+        }
+        toggleNav();
+    
+        document.querySelector('.scroll-top').addEventListener('click', () => {
+            document.documentElement.scrollTop = 0;
+        });
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
     <div class="flex items-center justify-between flex-wrap bg-gray-800 p-8 text-white">
         <div class="items-center text-xl text-grey-900 mr-6">
             {{ .Site.Params.site.name }}

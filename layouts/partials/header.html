@@ -16,7 +16,7 @@
                     src="{{ .Site.Params.logo.main | relURL }}"></a>
         </div>
         <div class="block lg:hidden">
-            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded type-1">
+            <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
                 <span class="top"></span>
                 <span class="middle"></span>
                 <span class="bottom"></span>
@@ -27,7 +27,7 @@
             </div>
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-900 hover:text-gray-400 mr-8">
+                <a href="{{ .URL }}" class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
                     {{ .Name }}
                 </a>
                 {{ end }}

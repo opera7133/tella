@@ -167,7 +167,7 @@ html {
 }
 
 /* menu */
-.type-1 {
+.mopen {
   float: left;
   display: block;
   background: rgba(255, 255, 255, 0);
@@ -175,7 +175,7 @@ html {
   z-index: 1000;
 }
 
-.type-1 span {
+.mopen span {
   transition: all 0.3s;
   transform: rotate(0deg);
   width: 50px;
@@ -187,22 +187,22 @@ html {
   top: 50%;
   margin-left: -25px;
 }
-.type-1 .top {
+.mopen .top {
   transform: translateY(-17px);
 }
-.type-1 .bottom {
+.mopen .bottom {
   transform: translateY(17px);
 }
-.type-1.is-open span {
+.mopen.is-open span {
   background: #fff;
 }
-.type-1.is-open .middle {
+.mopen.is-open .middle {
   background: rgba(255, 255, 255, 0);
 }
-.type-1.is-open .top {
+.mopen.is-open .top {
   transform: rotate(-45deg) translateY(0px);
 }
-.type-1.is-open .bottom {
+.mopen.is-open .bottom {
   transform: rotate(45deg) translateY(0px);
 }
 
@@ -233,50 +233,6 @@ body.scroll-lock {
   top: 0px;
   bottom: 0px;
 }
-
-/* button */
-
-.button {
-  min-width: 150px;
-  max-width: 250px;
-  z-index: 1;
-  -webkit-backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.button.button--aylen {
-  -webkit-transition: color 0.3s;
-  transition: color 0.3s;
-}
-.button--aylen::before,
-.button--aylen::after {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  bottom: 100%;
-  left: 0;
-  z-index: -1;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-  -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-  transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-}
-.button--aylen::before {
-  background: #a0aec0;
-}
-.button--aylen::after {
-  background: #4a5568;
-}
-.button--aylen:hover::before,
-.button--aylen:hover::after {
-  -webkit-transform: translate3d(0, 100%, 0);
-  transform: translate3d(0, 100%, 0);
-}
-.button--aylen:hover::after {
-  -webkit-transition-delay: 0.175s;
-  transition-delay: 0.175s;
-}
 .scroll-top {
   background-color: #222;
   text-align: center;
@@ -284,35 +240,24 @@ body.scroll-lock {
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
-  width: 2.5rem;
+  width: 3rem;
+  height:3rem;
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
+  padding-top: .75em;
+  padding-bottom: .75em;
   cursor: pointer;
 }
 
 /* content */
-.hover {
-  transition: all 0.3s ease 0s;
-}
-.hover:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  transform: translateY(-0.1875em);
-}
-.hover4 {
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease 0s;
-}
-.hover4:hover {
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
-  transform: translateY(-0.1875em);
+.content li li {
+  margin-left: 0.8em;
+  font-size: 0.9em;
 }
 .content {
   margin-bottom: 3em;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .content li {
   font-size: 1.1em;
@@ -321,7 +266,6 @@ body.scroll-lock {
 }
 .content a {
   color: #007bff;
-  word-break: break-all;
 }
 .content a:hover {
   text-decoration: underline;
@@ -332,19 +276,26 @@ body.scroll-lock {
   font-size: 1.1em;
   letter-spacing: 0.03em;
 }
+.content h1,.content h2,.content h3,.content h4,.content h5,.content h6 {
+  margin: 3em 0 .25em;
+}
+.content h1+h2, .content h2+h3, .content h3+h4, .content h4+h5, .content h5+h6, .content h2+h4, .content h3+h5, .content h4+h6 {
+  margin-top: 1em;
+}
 .content h1 {
   font-size: 2.25rem;
 }
 .content h2 {
-  margin-top: 0.5em;
-  margin-bottom: 0.3em;
-  font-size: 1.7em;
-  padding-bottom: 0.25em;
-  border-bottom: 2px solid #222;
-  font-weight: 700;
+  padding-top: 0.55em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  background-color: #f6f6f6;
+  border-left: 4px solid #222222;
+  font-weight: bold;
+  font-size: 1.55em;
 }
 .content h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   padding-bottom: 0.25em;
   border-bottom: 2px solid #222;
   font-weight: 700;
@@ -391,6 +342,9 @@ body.scroll-lock {
 }
 
 /* base */
+.sans {
+  font-family: "Open Sans", sans-serif;
+}
 pre {
   padding: 0.5rem;
   max-width: 72em;
@@ -475,15 +429,6 @@ input,textarea{
 .page-item.active .page-link {
   z-index: 1;
 }
-.h-10 {
-  height: 2.5rem;
-}
-.h-14 {
-  height: 3.5rem;
-}
-.w-14 {
-  width: 3.5rem;
-}
 
 /* toc */
 
@@ -494,7 +439,7 @@ input,textarea{
   line-height: 2;
 }
 #TableOfContents > ul:before {
-  content: "目次";
+  content: "Table of Contents";
   text-align: center;
   font-size: 1.5em;
   font-weight: 400;
@@ -531,7 +476,7 @@ input,textarea{
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 50, 0.5);
   border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 1px #121212;
 }
 
 /* share */

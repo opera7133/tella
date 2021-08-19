@@ -1,13 +1,13 @@
 [
   {
-    "title": "Responsive",
-    "description": "You don't need a SP site. You can use it as is.",
+    "title": "Simple",
+    "description": "All the bare necessities are there.",
     "icon": "icon-desktop_windows"
   },
   {
-    "title": "Features",
-    "description": "You can add or remove features at will.",
-    "icon": "icon-create"
+    "title": "Fast",
+    "description": "Light weight and fast loading speed.",
+    "icon": "icon-lightbulb_outline"
   },
   {
     "title": "Github",

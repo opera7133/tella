@@ -15,20 +15,22 @@
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
         <h1 class="title text-5xl">{{.Title}}</h1>
         <section class="mb-4">
-            <h4 id="date"><span class="icon-access_time mr-1"></span>{{ .Date.Format "2006/01/02" }} </h4>
+            <hr class="my-2">
+            <h4 id="date"><span class="icon-access_time text-xl mr-2"></span>{{ .Date.Format "2006/01/02" }} </h4>
             {{ if .Params.author }}
-            <h4><span class="icon-person mr-1"></span>{{.Params.author}}</h4>
+            <h4><span class="icon-person text-xl mt-1 mr-2"></span>{{.Params.author}}</h4>
             {{ end }}
             {{ with .Params.categories }}
             <div id="categories">
-                <span class="icon-folder"></span>
+                <span class="icon-folder text-xl"></span>
                 {{ range . }}
                 <span
-                    class="inline-flex py-1 leading-4 content-center justify-center h-8 px-1 hover:text-black"><a
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 hover:text-black"><a
                         href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
                 {{ end }}
             </div>
             {{ end }}
+            <hr class="my-2">
         </section>
         {{ if .Params.image }}
         <img class="my-4" src="{{ .Params.image | absURL }}">

@@ -1,17 +1,14 @@
-<div class="w-full px-2 lg:max-w-full lg:flex mt-3 lg:px-0 hover4">
+<div class="sans w-full px-2 lg:max-w-full lg:flex mt-3 lg:px-0 duration-500 transform hover:-translate-y-1 hover:shadow-md">
     {{ if .Params.image }}
-    <img id="thumb" alt="{{.Title}}" class="w-auto lg:h-48" src="{{ .Params.image | relURL }}" />
+    <img id="thumb" alt="{{.Title}}" class="w-auto lg:h-44" src="{{ .Params.image | relURL }}" />
     {{ else }}
-    <img id="thumb" alt="{{.Title}}" class="w-auto lg:h-48" src="{{ "/img/default.jpg" | relURL }}">
+    <img id="thumb" alt="{{.Title}}" class="w-auto lg:h-44" src="{{ "/img/default.jpg" | relURL }}">
     {{ end }}
-    <div
-        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white pl-4 p-2 flex flex-col justify-between leading-normal max-w-full w-full">
-        <div class="mb-8">
-            <div class="text-gray-900 font-bold text-xl">{{.Title}}</div>
-            <p class="text-sm text-gray-700 flex items-center mb-2">
-                <time><span class="icon-access_time mr-1"></span>{{.Date.Format "2006/01/02"}}</time>
-            </p>
-            <p class="text-gray-700 text-base">{{ substr .Summary 0 130 | plainify }}...</p>
-        </div>
+    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 relative pl-4 p-6 justify-between leading-normal max-w-full w-full">
+        <div class="text-gray-900 font-bold text-xl mb-2 dark:text-white">{{ .Title }}</div>
+        <p class="text-gray-700 text-base pb-5 dark:text-gray-300">{{ substr .Summary 0 130 | plainify | htmlUnescape }}...</p>
+        <p class="text-sm text-gray-600 items-center dark:text-gray-400">
+            <time>{{ .Date.Format "2006/01/02" }}</time>
+        </p>
     </div>
 </div>
