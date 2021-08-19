@@ -2,7 +2,11 @@ name = "Tella"
 license = "MIT"
 licenselink = "https://github.com/opera7133/tella/blob/master/LICENSE"
 description = "Simple, Light, Responsive"
+
 homepage = "https://github.com/opera7133/tella"
+
+demosite = "https://tella.pages.dev"
+
 tags = ["light", "simple", "blog", "clean", "tailwindcss", "responsive", "company", "contact form", "modern", "slide"]
 features = ["blog", "slides", "contact form"]
 min_version = "0.69"
