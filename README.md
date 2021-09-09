@@ -27,10 +27,33 @@ $ npm install -g autoprefixer
 ```
 
 ## Installation
+### Method 1
+Inside the folder of your Hugo site run:
+
+```bash
+$ git clone https://github.com/opera7133/tella themes/tella
+```
+
+Updating theme:
+```bash
+$ cd themes/tella
+$ git pull
+```
+
+### Method 2
 Inside the folder of your Hugo site run:
 
 ```bash
 $ git submodule add https://github.com/opera7133/tella.git themes/tella
+```
+
+Updating theme:
+```bash
+$ git submodule update --remote --merge
+```
+
+### Install dependencies
+```bash
 $ cd themes/tella
 $ npm install
 ```
