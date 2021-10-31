@@ -383,6 +383,9 @@ ul {
   margin-left: 0.4rem;
   list-style: inside;
 }
+b, strong {
+  font-weight: 700;
+}
 
 /* form */
 
