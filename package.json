@@ -12,11 +12,11 @@
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^4.0.3",
         "@tailwindcss/typography": "^0.4.1",
-        "autoprefixer": "^10.3.7",
-        "postcss": "^8.3.9",
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.3.11",
         "postcss-cli": "^9.0.1",
         "postcss-import": "^14.0.2",
-        "tailwindcss": "^2.2.16"
+        "tailwindcss": "^2.2.18"
     },
     "browserslist": [
         "last 1 version",
