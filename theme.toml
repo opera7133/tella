@@ -8,7 +8,6 @@ demosite = "https://tella.pages.dev"
 
 tags = ["light", "simple", "blog", "clean", "tailwindcss", "responsive", "company", "modern", "slide"]
 features = ["blog", "slides", "responsive"]
-min_version = "0.69"
 
 [author]
   name = "wamo"
