@@ -1,4 +1,5 @@
 module.exports = {
+  content: ["./**/*.html", "./config.toml"],
   theme: {
     extend: {
       colors: {
@@ -12,7 +13,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/typography'),
-  ]
-}
+  plugins: [require("@tailwindcss/typography")],
+};

@@ -1,20 +1,20 @@
-    {{- partial "analytics" . -}}
-    <meta charset="utf-8">
-    <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="{{ "favicon-32x32.png" | relURL }}">
-    {{ if .Site.Params.icon.fa5 }}
-    <link href="{{ "/css/fa5.min.css" | relURL }}" rel="stylesheet" type="text/css">
-    {{ end }}
-    {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") }}
-    {{ if .Site.IsServer }}
-        <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-    {{ else }}
-        {{ $styles := $styles| minify | fingerprint | resources.PostProcess }}
-        <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-    {{ end }}
-    {{ if .IsHome }}
-    <link rel="stylesheet" href="{{ "/css/swiper-bundle.min.css" | relURL }}">
-    {{ end }}
-    <link href="{{ "/css/style.min.css" | relURL }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ "/css/custom.css" | relURL }}">
+{{- partial "analytics" . -}}
+<meta charset="utf-8">
+<title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="icon" href='{{ "favicon-32x32.png" | relURL }}'>
+{{ if .Site.Params.icon.fa5 }}
+<link href='{{ "/css/fa5.min.css" | relURL }}' rel="stylesheet" type="text/css">
+{{ end }}
+{{ $styles := resources.Get "css/style.css" | postCSS }}
+{{ if .Site.IsServer }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
+{{ else }}
+{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+{{ end }}
+{{ if .IsHome }}
+<link rel="stylesheet" href='{{ "/css/swiper-bundle.min.css" | relURL }}'>
+{{ end }}
+<link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">
+<link rel="stylesheet" href='{{ "/css/custom.css" | relURL }}'>
