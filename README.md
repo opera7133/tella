@@ -52,7 +52,7 @@ $ git submodule update --remote --merge
 
 ### Install dependencies
 
-Copy at least the following files from `themes/Blonde/exampleSite` to the root folder of your site.
+Copy at least the following files from `themes/tella/exampleSite` to the root folder of your site.
 
 - package.json
 - tailwind.config.js
