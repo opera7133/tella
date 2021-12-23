@@ -8,7 +8,7 @@ HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
 
 [context.split1]
-command = "hnpm run build"
+command = "npm run build"
 
 [context.split1.environment]
 HUGO_VERSION = "0.90.0"
