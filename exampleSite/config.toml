@@ -18,6 +18,8 @@ enableRobotsTXT = true
 
 [params]
 
+  mainSections = ['blog']
+
   [params.logo]
     main = "img/logo/logo.svg"
     alt = "Tella Logo"
