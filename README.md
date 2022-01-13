@@ -79,7 +79,7 @@ Copy the config.toml in the exampleSite to the root of your Hugo site. Change st
 In order to see your site in action, run Hugo's built-in local server.
 
 ```bash
-$ npm run build
+$ npm run start
 ```
 
 Now enter `localhost:1313` in the address bar of your browser.
