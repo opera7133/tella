@@ -24,6 +24,10 @@ enableRobotsTXT = true
     main = "img/logo/logo.svg"
     alt = "Tella Logo"
 
+    # The size parameter is the class name of tailwindcss
+    # https://tailwindcss.com/
+    size = "h-14"
+
   [params.site]
     name = "Tella"
 
@@ -77,4 +81,5 @@ enableRobotsTXT = true
   [[menu.footer]]
     name = "Github"
     url = "https://github.com/opera7133/tella"
+    pre = "<i class='icon-github text-2xl'></i>"
       weight = 2
