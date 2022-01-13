@@ -1,9 +1,9 @@
 <footer class="bg-tlgray-100">
     {{ if not .IsHome }}
-    <script src="{{ "/js/clipboard.min.js" | relURL }}"></script>
-    <script src="{{ "/js/highlight.min.js" | relURL }}"></script>
-    <script src="{{ "/js/highlightjs-line-numbers.min.js" | relURL }}"></script>
-    <script src="{{ "/js/sweetalert2.min.js" | relURL }}"></script>
+    <script src="{{ " /js/clipboard.min.js" | relURL }}"></script>
+    <script src="{{ " /js/highlight.min.js" | relURL }}"></script>
+    <script src="{{ " /js/highlightjs-line-numbers.min.js" | relURL }}"></script>
+    <script src="{{ " /js/sweetalert2.min.js" | relURL }}"></script>
     <script>
         hljs.initHighlightingOnLoad();
         hljs.initLineNumbersOnLoad();
@@ -23,7 +23,7 @@
             var hamburger = document.getElementById("hamburgerbtn");
             var overlay = document.getElementById("overlay");
             var body = document.body;
-    
+
             hamburger.addEventListener("click", function () {
                 overlay.classList.toggle("open");
                 hamburger.classList.toggle("is-open");
@@ -31,7 +31,7 @@
             });
         }
         toggleNav();
-    
+
         document.querySelector('.scroll-top').addEventListener('click', () => {
             document.documentElement.scrollTop = 0;
         });
@@ -44,10 +44,14 @@
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
             <div class="text-lg lg:flex-grow">
             </div>
-            <div class="text-lg">
+            <div class="flex flex-row items-center text-lg">
                 {{ range .Site.Menus.footer }}
                 <a href="{{ .URL }}" class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-8">
+                    {{ if not .Pre }}
                     {{ .Name }}
+                    {{ else }}
+                    {{ .Pre }}
+                    {{ end }}
                 </a>
                 {{ end }}
             </div>
