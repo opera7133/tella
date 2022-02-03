@@ -2,8 +2,7 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:
-    url('./fonts/icomoon.ttf?k0g81o') format('truetype'),
+  src: url('./fonts/icomoon.ttf?k0g81o') format('truetype'),
     url('./fonts/icomoon.woff?k0g81o') format('woff'),
     url('./fonts/icomoon.svg?k0g81o#icomoon') format('svg');
   font-weight: normal;
@@ -11,7 +10,8 @@
   font-display: block;
 }
 
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -27,79 +27,79 @@
 }
 
 .icon-facebook:before {
-  content: "\f09a";
+  content: '\f09a';
 }
 .icon-get-pocket:before {
-  content: "\f265";
+  content: '\f265';
 }
 .icon-line:before {
-  content: "\e90e";
+  content: '\e90e';
 }
 .icon-hatenabookmark:before {
-  content: "\e90f";
+  content: '\e90f';
 }
 .icon-discord:before {
-  content: "\e907";
+  content: '\e907';
 }
 .icon-email:before {
-  content: "\e902";
+  content: '\e902';
 }
 .icon-message:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-create:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-access_time:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-file_download:before {
-  content: "\e90b";
+  content: '\e90b';
 }
 .icon-folder:before {
-  content: "\e908";
+  content: '\e908';
 }
 .icon-desktop_windows:before {
-  content: "\e906";
+  content: '\e906';
 }
 .icon-keyboard_arrow_left:before {
-  content: "\e904";
+  content: '\e904';
 }
 .icon-keyboard_arrow_right:before {
-  content: "\e905";
+  content: '\e905';
 }
 .icon-keyboard_arrow_up:before {
-  content: "\e90d";
+  content: '\e90d';
 }
 .icon-remove_red_eye:before {
-  content: "\e90c";
+  content: '\e90c';
 }
 .icon-person:before {
-  content: "\e90a";
+  content: '\e90a';
 }
 .icon-lightbulb_outline:before {
-  content: "\e909";
+  content: '\e909';
 }
 .icon-price-tag:before {
-  content: "\e935";
+  content: '\e935';
 }
 .icon-sphere:before {
-  content: "\e9c9";
+  content: '\e9c9';
 }
 .icon-link:before {
-  content: "\e9cb";
+  content: '\e9cb';
 }
 .icon-twitter:before {
-  content: "\ea96";
+  content: '\ea96';
 }
 .icon-youtube:before {
-  content: "\ea9d";
+  content: '\ea9d';
 }
 .icon-github:before {
-  content: "\eab0";
+  content: '\eab0';
 }
 body {
-  font-family: "Montserrat", "Noto Sans JP", sans-serif;
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
   font-weight: 300;
 }
 html {
@@ -241,162 +241,26 @@ body.scroll-lock {
   right: 1.5rem;
   bottom: 1.5rem;
   width: 3rem;
-  height:3rem;
+  height: 3rem;
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  padding-top: .75em;
-  padding-bottom: .75em;
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
   cursor: pointer;
-}
-
-/* content */
-.content li li {
-  margin-left: 0.8em;
-  font-size: 0.9em;
-}
-.content {
-  margin-bottom: 3em;
-  font-family: "Open Sans", sans-serif;
-}
-.content li {
-  font-size: 1.1em;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
-.content a {
-  color: #007bff;
-}
-.content a:hover {
-  text-decoration: underline;
-}
-.content p {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  font-size: 1.1em;
-  letter-spacing: 0.03em;
-}
-.content h1,.content h2,.content h3,.content h4,.content h5,.content h6 {
-  margin: 3em 0 .25em;
-}
-.content h1+h2, .content h2+h3, .content h3+h4, .content h4+h5, .content h5+h6, .content h2+h4, .content h3+h5, .content h4+h6 {
-  margin-top: 1em;
-}
-.content h1 {
-  font-size: 2.25rem;
-}
-.content h2 {
-  padding-top: 0.55em;
-  padding-bottom: 0.5em;
-  padding-left: 0.5em;
-  background-color: #f6f6f6;
-  border-left: 4px solid #222222;
-  font-weight: bold;
-  font-size: 1.55em;
-}
-.content h3 {
-  font-size: 1.4rem;
-  padding-bottom: 0.25em;
-  border-bottom: 2px solid #222;
-  font-weight: 700;
-}
-.content h4 {
-  font-size: 1.25rem;
-}
-.content h5 {
-  font-size: 1.125rem;
-}
-.content h6 {
-  font-size: 1rem;
-}
-.content b {
-  font-style: bold;
-}
-.content blockquote {
-  background-color: #edf2f7;
-  padding: 0.5rem 1rem;
-}
-.content table:not(.hljs-ln) {
-  display: table;
-  border-collapse: collapse;
-  border-spacing: 2px;
-  table-layout: auto;
-}
-.content th {
-  padding: 0.5rem 1rem;
-  display: table-cell;
-  text-align: -internal-center;
-}
-.content td:not(.hljs-ln-line) {
-  padding: 0.5rem 1rem;
-  box-sizing: border-box;
-  border: 1px solid #e2e8f0;
-  display: table-cell;
-  text-align: -internal-center;
-}
-.content tr {
-  display: table-row;
-}
-.content thead {
-  display: table-header-group;
-}
-
-/* base */
-.sans {
-  font-family: "Open Sans", sans-serif;
-}
-pre {
-  padding: 0.5rem;
-  max-width: 72em;
-  overflow: auto;
-}
-code,
-kbd,
-samp {
-  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-    monospace;
-  font-size: 1em;
-}
-ol {
-  margin-left: 1em;
-  list-style-type: decimal;
-}
-.footnotes {
-  margin-top: 1rem;
-}
-blockquote {
-  margin: 0.8rem 0;
-}
-iframe {
-  margin: 0.8rem 0;
-}
-.s_video_simple {
-  margin: 0.8rem 0;
-}
-table:not(.hljs-ln) {
-  margin-bottom: 0.8rem;
-}
-.highlight {
-  margin-bottom: 0.8rem;
-}
-ul {
-  margin-left: 0.4rem;
-  list-style: inside;
-}
-b, strong {
-  font-weight: 700;
 }
 
 /* form */
 
-input[type="text"],
+input[type='text'],
 textarea {
   width: 100%;
   max-width: 72em;
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
-input,textarea{
+input,
+textarea {
   -webkit-appearance: none;
 }
 
@@ -442,7 +306,7 @@ input,textarea{
   line-height: 2;
 }
 #TableOfContents > ul:before {
-  content: "Table of Contents";
+  content: 'Table of Contents';
   text-align: center;
   font-size: 1.5em;
   font-weight: 400;
@@ -466,6 +330,12 @@ input,textarea{
 .hljs-ln-code {
   padding-left: 0.8em !important;
 }
+.content code table.hljs-ln {
+  margin: 0;
+}
+.content code table.hljs-ln tr {
+  border-bottom-width: 0px;
+}
 
 /* scroll bar */
 
@@ -484,15 +354,15 @@ input,textarea{
 
 /* share */
 .share-button {
-  padding-top:10px;
-  padding-bottom:8px;
-  transition:all 0.3s;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  transition: all 0.3s;
 }
 .share-button:hover {
   opacity: 0.7;
 }
 .twitter {
-  background-color:#1da1f2;
+  background-color: #1da1f2;
 }
 .line {
   background-color: #00c300;
@@ -504,7 +374,7 @@ input,textarea{
   background-color: #ef4056;
 }
 .hatena {
-  background-color: #00A4DE;
+  background-color: #00a4de;
 }
 .url {
   background-color: #222;

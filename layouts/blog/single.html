@@ -6,36 +6,35 @@
 <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
 <meta name="twitter:title" content="{{ .Title }}">
-<link rel="preload" href="{{ "/css/monokai-sublime.min.css" | relURL }}" as="style"
+<link rel="preload" href='{{ "/css/sweetalert2.min.css" | relURL }}' as="style"
     onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="{{ "/css/sweetalert2.min.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 {{ end }}
 {{ define "main" }}
 <div class="mx-auto my-10 max-w-6xl">
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-        <h1 class="title text-5xl">{{.Title}}</h1>
-        <section class="mb-4">
-            <hr class="my-2">
-            <h4 id="date"><span class="icon-access_time text-xl mr-2"></span>{{ .Date.Format "2006/01/02" }} </h4>
+        <h1 class="title text-5xl font-bold mb-3">{{.Title}}</h1>
+        <section class="mb-4 text-lg">
+            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>{{
+                .Date.Format "2006/01/02" }} </h4>
             {{ if .Params.author }}
-            <h4><span class="icon-person text-xl mt-1 mr-2"></span>{{.Params.author}}</h4>
+            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>{{.Params.author}}
+            </h4>
             {{ end }}
             {{ with .Params.categories }}
-            <div id="categories">
-                <span class="icon-folder text-xl"></span>
+            <div id="categories" class="flex flex-row items-center">
+                <span class="icon-folder text-2xl mr-1"></span>
                 {{ range . }}
                 <span
-                    class="inline-flex py-1 leading-4 content-center justify-center px-1 hover:text-black"><a
-                        href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
+                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                        href="{{ " categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
                 {{ end }}
             </div>
             {{ end }}
-            <hr class="my-2">
         </section>
         {{ if .Params.image }}
         <img class="my-4" src="{{ .Params.image | absURL }}">
         {{ end }}
-        <div class="content py-1">{{.Content}}</div>
+        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
         <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
             <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank"
                 title="Tweet" class="share-button twitter">
