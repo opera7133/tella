@@ -10,14 +10,14 @@
     "start": "concurrently npm:watch:*",
     "watch:tw": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css --watch",
     "watch:hugo": "hugo server",
-    "build": "tailwindcss -i ./themes/Blonde/assets/css/main.css -o ./themes/Blonde/assets/css/style.css && hugo --minify"
+    "build": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css && hugo --minify"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.0",
+    "@tailwindcss/typography": "^0.5.1",
     "autoprefixer": "^10.4.2",
     "concurrently": "^7.0.0",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
-    "tailwindcss": "^3.0.15"
+    "tailwindcss": "^3.0.18"
   }
 }
