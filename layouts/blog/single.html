@@ -26,7 +26,7 @@
                 {{ range . }}
                 <span
                     class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
-                        href="{{ " categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
+                        href='{{ "categories" | absURL}}/{{ . | urlize }}'>{{ . }}</a></span>
                 {{ end }}
             </div>
             {{ end }}
