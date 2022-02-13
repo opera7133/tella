@@ -266,6 +266,10 @@ textarea {
 input[type='checkbox'] {
   -webkit-appearance: checkbox;
 }
+span.begin-task-list + ul {
+  padding-left: 0;
+  list-style: none;
+}
 
 /* pagination */
 
