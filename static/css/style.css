@@ -263,7 +263,7 @@ input,
 textarea {
   -webkit-appearance: none;
 }
-input[type='checkbox']:checked {
+input[type='checkbox'] {
   -webkit-appearance: checkbox;
 }
 
