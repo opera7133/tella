@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./**/*.html", "./config.toml"],
+  content: ["./**/*.html", "./**/*.md", "./config.toml"],
   theme: {
     extend: {
       colors: {
