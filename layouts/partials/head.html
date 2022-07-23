@@ -3,8 +3,8 @@
 <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link rel="icon" href='{{ "favicon-32x32.png" | relURL }}'>
-{{ if .Site.Params.icon.fa5 }}
-<link href='{{ "/css/fa5.min.css" | relURL }}' rel="stylesheet" type="text/css">
+{{ if .Site.Params.icon.fontawesome }}
+<link href='{{ "/css/fa6.min.css" | relURL }}' rel="stylesheet" type="text/css">
 {{ end }}
 {{ $styles := resources.Get "css/style.css" | postCSS }}
 {{ if .Site.IsServer }}

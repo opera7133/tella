@@ -13,11 +13,11 @@
     "build": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css && hugo --minify"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.2",
-    "autoprefixer": "^10.4.4",
-    "concurrently": "^7.0.0",
-    "postcss": "^8.4.12",
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^7.3.0",
+    "postcss": "^8.4.14",
     "postcss-cli": "^10.0.0",
-    "tailwindcss": "^3.0.23"
+    "tailwindcss": "^3.1.6"
   }
 }
