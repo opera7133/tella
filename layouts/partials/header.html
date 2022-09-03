@@ -3,7 +3,7 @@
         <ul class="text-center list-none text-white text-3xl">
             {{ range .Site.Menus.main }}
             <li class="p-2">
-                <a href="{{ .URL }}">
+                <a href="{{ .URL | safeURL }}">
                     <span>{{ .Name }}</span>
                 </a>
             </li>
@@ -27,7 +27,7 @@
             </div>
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}"
+                <a href="{{ .URL | safeURL }}"
                     class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
                     {{ .Name }}
                 </a>
