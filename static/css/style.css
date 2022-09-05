@@ -161,7 +161,7 @@ html {
   position: relative;
 }
 .swiper-button-prev:after,
-.swiper-conteiner-rtl,
+.swiper-container-rtl,
 .swiper-button-next:after {
   color: #fff;
 }
