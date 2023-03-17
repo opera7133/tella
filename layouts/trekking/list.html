@@ -1,13 +1,12 @@
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl">
-    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-        <h1 class="title text-5xl mb-4">{{.Title}}</h1>
-        <div class="content py-1">{{.Content}}</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
-        {{ range .Pages.ByWeight }}
-        {{ .Render "summary" }}
-        {{ end }}
-        </div>
+{{ partial "section-header" (dict "title" "Jungle Trekking In Bukit Lawang" "description" "The adventure of a lifetime") }}
+<section class="py-10 px-12">
+    <!-- Card Grid -->
+    <div
+        class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    {{ range .Paginator.Pages }}
+        {{ partial "card.html" (dict "Page" . "image" .Params.thumb "title" .Title "description" .Summary) }}
+    {{ end }}
     </div>
-</div>
+</section>
 {{ end }}
