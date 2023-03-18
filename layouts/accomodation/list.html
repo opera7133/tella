@@ -8,8 +8,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="{{ .Title }}">
 
-{{ if .Params.image }}
-{{ with .Params.image }}
+{{ if .Params.thumb }}
+{{ with .Params.thumb }}
 <meta property="og:image" content="{{ . | absURL }}">
 <meta property="og:image:url" content="{{ . | absURL }}">
 {{ end }}
@@ -32,9 +32,9 @@
 {{ end }}
 
 {{ define "main" }}
+{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
 <div class="mx-auto my-10 max-w-6xl">
   <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-    {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
     {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
     {{ range $paginator.Pages }}
     <a href="{{ .Permalink }}">

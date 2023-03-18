@@ -64,4 +64,15 @@
   <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
     &copy; {{site.Title}} {{ now.Year }} All Rights Reserved.
   </div>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </footer>
