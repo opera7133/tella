@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ partial "section-header" (dict "title" "Jungle Trekking In Bukit Lawang" "description" "The adventure of a lifetime") }}
+{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
 <section class="py-10 px-12">
     <!-- Card Grid -->
     <div
