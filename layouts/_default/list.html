@@ -38,7 +38,7 @@
     {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
     {{ range $paginator.Pages }}
     <a href="{{ .Permalink }}">
-      <div>{{ partial "summary.html" . }}</div>
+      <div>{{ partial "cards/card-accomodation.html" . }}</div>
     </a>
     {{ end }}
   </div>
