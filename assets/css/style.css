@@ -2019,15 +2019,21 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.hover\:opacity-60:hover {
-  opacity: 0.6;
+.underline {
+  text-decoration-line: underline;
 }
 
-.hover\:opacity-80:hover {
-  opacity: 0.8;
+.mix-blend-plus-lighter {
+  mix-blend-mode: plus-lighter;
 }
 
-.hover\:shadow-lg:hover {
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -2737,6 +2743,14 @@ video {
 
   .lg\:h-44 {
     height: 11rem;
+  }
+
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40%;
   }
 
   .lg\:w-auto {
