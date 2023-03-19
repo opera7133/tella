@@ -7,7 +7,7 @@
                     <div class="container mx-auto">
                         <div role="list" aria-label="Behind the scenes People " class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
                             
-                            {{ range .Paginator.Pages }}
+                            {{ range .Paginator.Pages.ByParam "order" }}
                                 {{ partial "cards/card-team" . }}
                             {{ end }}
 
