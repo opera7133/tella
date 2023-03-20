@@ -1,3 +1,4 @@
 {{ define "main" }}
+{{ partial "slide" . }}
 {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
 {{ end }}

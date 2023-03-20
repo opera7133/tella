@@ -32,6 +32,7 @@
 {{ end }}
 
 {{ define "main" }}
+{{ partial "slide" . }}
 {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
 <div class="mx-auto my-10 max-w-6xl">
   <div class="mx-3 col-span-3 lg:col-span-2 px-2">
