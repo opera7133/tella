@@ -1,3 +1,9 @@
+{{ define "header" }}
+<div class="grid grid-cols-1">
+  <div class="z-40" style="grid-column: 1; grid-row: 1;">{{ partial "header.html" . -}}</div> 
+  <div style="grid-column: 1; grid-row: 1;">{{ partial "slide.html" . -}}</div>
+</div>
+{{ end }}
 {{ define "main" }}
             <!-- Code block starts -->
             <dh-component>
