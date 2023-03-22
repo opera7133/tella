@@ -5,5 +5,7 @@
 </div>
 {{ end }}
 {{ define "main" }}
-{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
+<div class="mx-3">
+  {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
+</div>
 {{ end }}

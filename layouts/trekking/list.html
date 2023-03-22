@@ -5,14 +5,14 @@
 </div>
 {{ end }}
 {{ define "main" }}
-{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
-<section class="py-10 px-12">
-    <!-- Card Grid -->
-    <div
-        class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-    {{ range .Paginator.Pages }}
-        {{ partial "cards/card-trekking.html" (dict "Page" . "image" .Params.thumb "title" .Title "description" .Summary) }}
-    {{ end }}
-    </div>
-</section>
+    {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
+    <section class="py-10 px-12">
+        <!-- Card Grid -->
+        <div
+            class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {{ range .Paginator.Pages.ByParam "order" }}
+            {{ partial "cards/card-trekking.html" (dict "Page" . "image" .Params.thumb "title" .Title "description" .Summary) }}
+        {{ end }}
+        </div>
+    </section>
 {{ end }}
