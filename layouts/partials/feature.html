@@ -1,8 +1,6 @@
-<div class="swiper-container">
     <div class="swiper-wrapper">
-        {{ range .Params.slider }}
         <div class="swiper-slide">
-            <img src="{{ .image | absURL }}" alt="">
+            <img src="{{ .Params.feature | relURL }}" alt="">
             <div class="s-fade-txt  p-10 bg-opacity-50 rounded-full">
                 <h1 class="text-4xl text-white text-center font-extrabold"
                     style=" text-shadow:
@@ -10,10 +8,8 @@
                      1px -1px 0 rgb(31 41 55),
                      -1px 1px 0 rgb(31 41 55),
                       1px 1px 0 rgb(31 41 55);">
-                    {{ .caption }}
+                    {{ .Title }}
                 </h1>
             </div>
         </div>
-        {{ end }}
     </div>
-</div>

@@ -32,16 +32,18 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl">
-  <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-    {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
-    {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
-    {{ range $paginator.Pages }}
-    <a href="{{ .Permalink }}">
-      <div>{{ partial "cards/card-accomodation.html" . }}</div>
-    </a>
-    {{ end }}
+<div class="mx-3">
+  <div class="mx-auto my-10 max-w-6xl">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+      {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "in" site.Params.mainSections) 6 }}
+      {{ range $paginator.Pages }}
+      <a href="{{ .Permalink }}">
+        <div>{{ partial "cards/card-accomodation.html" . }}</div>
+      </a>
+      {{ end }}
+    </div>
+    {{ partial "paginator.html" . }}
   </div>
-  {{ partial "paginator.html" . }}
 </div>
 {{ end }}

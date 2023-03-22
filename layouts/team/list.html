@@ -5,21 +5,23 @@
 </div>
 {{ end }}
 {{ define "main" }}
-            <!-- Code block starts -->
-            <dh-component>
-                {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
+<!-- Code block starts -->
+<div class="mx-3">
+    <dh-component>
+        {{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle "content" .Content) }}
 
-                <div class="w-full px-10 pt-10">
-                    <div class="container mx-auto">
-                        <div role="list" aria-label="Behind the scenes People " class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
-                            
-                            {{ range .Paginator.Pages.ByParam "order" }}
-                                {{ partial "cards/card-team" . }}
-                            {{ end }}
+        <div class="w-full px-10 pt-10">
+            <div class="container mx-auto">
+                <div role="list" aria-label="Behind the scenes People " class="lg:flex md:flex sm:flex items-center xl:justify-between flex-wrap md:justify-around sm:justify-around lg:justify-around">
+                    
+                    {{ range .Paginator.Pages.ByParam "order" }}
+                        {{ partial "cards/card-team" . }}
+                    {{ end }}
 
 
-                        </div>
-                    </div>
                 </div>
-            </dh-component>
+            </div>
+        </div>
+    </dh-component>
+</div>
 {{ end }}

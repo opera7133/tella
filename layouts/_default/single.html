@@ -31,10 +31,17 @@
 
 {{ end }}
 
+{{- define "header" }}
+<div class="grid grid-cols-1">
+  <div class="z-40" style="grid-column: 1; grid-row: 1;">{{ partial "header.html" . -}}</div> 
+  <div style="grid-column: 1; grid-row: 1;">{{ partial "feature.html" . -}}</div>
+</div>
+{{- end }}
+
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl">
+<div class="mx-auto max-w-6xl py-10">
   <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-    <h1 class="title text-5xl mb-4">{{.Title}}</h1>
+    <div class="mb-7">{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle) }}</div>
     <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
   </div>
 </div>
