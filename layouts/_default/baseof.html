@@ -7,14 +7,19 @@
 </head>
 
 <body class="flex flex-col min-h-screen">
-  <main class="flex-grow bg-lime-100">
+  <main class="flex-grow bg-emerald-800">
     {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
+    <div class="mx-4 bg-amber-50 shadow-2xl px-2 max-h-full">
+
     <div class="scroll-top rounded-full">
       <span class="icon-keyboard_arrow_up text-2xl"></span>
     </div>
     {{- block "main" . }}{{- end }}
+    </div>
+
   </main>
   {{- partial "footer.html" . -}}
+
 </body>
 
 </html>
