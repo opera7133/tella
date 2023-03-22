@@ -1,4 +1,4 @@
-<header>
+<header class="w-full lg:bg-slate-600 lg:bg-opacity-50">
     <div id="overlay">
         <ul class="text-center list-none text-white text-3xl">
             {{ range .Site.Menus.main }}
@@ -10,14 +10,14 @@
             {{ end }}
         </ul>
     </div>
-    <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8 bg-lime-100">
-        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+    <nav class="flex items-center justify-between flex-wrap px-8 py-2">
+        <div class="flex items-center flex-shrink-0 text-xl text-white mr-6">
             <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}"
-                    class="{{ .Site.Params.logo.size }} mr-3" src="{{ .Site.Params.logo.main | relURL }}"></a>
+                    class="{{ .Site.Params.logo.size }} mr-1" src="{{ .Site.Params.logo.main | relURL }}"></a>
         </div>
         <div class="block lg:hidden">
             <div id="hamburgerbtn" class="flex cursor-pointer items-center w-14 h-10 py-2 rounded mopen">
-                <span class="top"></span>
+                <span class="top bg-white"></span>
                 <span class="middle"></span>
                 <span class="bottom"></span>
             </div>
@@ -28,7 +28,7 @@
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
                 <a href="{{ .URL | safeURL }}"
-                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-black hover:opacity-60 mr-8">
+                    class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-60 mr-6">
                     {{ .Name }}
                 </a>
                 {{ end }}

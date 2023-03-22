@@ -16,11 +16,14 @@
 
 <body>
     {{- partial "alert.html" . -}}
-    {{- partial "header.html" . -}}
+    <div class="grid grid-cols-1">
+        <div class="z-40" style="grid-column: 1; grid-row: 1;">{{ partial "header.html" . -}}</div> 
+        <div style="grid-column: 1; grid-row: 1;">{{ partial "slide.html" . -}}</div>
+    </div>
+
     <div class="scroll-top rounded-full">
         <span class="icon-keyboard_arrow_up text-2xl"></span>
     </div>
-    {{- partial "slide.html" . -}}
     {{- partial "strip.html" . -}}
     {{- partial "footer.html" . -}}
 

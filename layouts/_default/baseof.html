@@ -8,7 +8,7 @@
 
 <body class="flex flex-col min-h-screen">
   <main class="flex-grow bg-lime-100">
-    {{- partial "header.html" . -}}
+    {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
     <div class="scroll-top rounded-full">
       <span class="icon-keyboard_arrow_up text-2xl"></span>
     </div>
