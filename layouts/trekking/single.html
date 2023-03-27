@@ -1,0 +1,76 @@
+{{ define "meta_tags" }}
+
+<meta property="og:site_name" content="{{ .Site.Title }}" />
+<meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="{{ .Title }}">
+
+{{ if .Params.image }}
+{{ with .Params.image }}
+<meta property="og:image" content="{{ . | absURL }}">
+<meta property="og:image:url" content="{{ . | absURL }}">
+{{ end }}
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
+<meta property="og:image:url" content="{{ .Site.Params.homepage_meta_tags.meta_og_image | absURL }}">
+{{ end }}
+
+{{- if .Description }}
+<meta property="og:description" content="{{ .Description }}" />
+<meta property="twitter:description" content="{{ .Description }}" />
+{{- else if .Summary }}
+<meta property="og:description" content="{{ .Summary }}" />
+<meta property="twitter:description" content="{{ .Summary }}" />
+{{- else if .Site.Params.description }}
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="twitter:description" content="{{ .Site.Params.description }}" />
+{{- end }}
+
+{{ end }}
+
+{{- define "header" }}
+<div class="grid grid-cols-1">
+  <div class="z-40" style="grid-column: 1; grid-row: 1;">{{ partial "header.html" . -}}</div> 
+  <div style="grid-column: 1; grid-row: 1;">{{ partial "feature.html" . -}}</div>
+</div>
+{{- end }}
+
+{{ define "main" }}
+<div class="mx-auto max-w-6xl py-10">
+  <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+    <div class="mb-7">{{ partial "section-header" (dict "title" .Title "subtitle" .Params.subtitle) }}</div>
+    <div class="xl:text-4xl text-3xl text-gray-800 font-extrabold my-6">
+        Details
+    </div>
+    <p class="my-6 text-gray-500 text-base font-normal pb-3">
+        {{ .Params.details }}
+    </p>
+
+    <div class="xl:text-4xl text-3xl text-gray-800 font-extrabold my-6">
+        Itinerary
+    </div>
+
+    <div class="my-10">
+        {{ partial "components/accordian" . }}
+    </div>
+
+    <div class="xl:text-4xl text-3xl text-gray-800 font-extrabold my-6">
+        Tick List
+    </div>
+
+    <div class="my-10">
+        {{ partial "components/checkbox" . }}
+    </div>
+
+    <div class="xl:text-4xl text-3xl text-gray-800 font-extrabold my-6">
+        Gallery
+    </div>
+
+    {{ partial "components/gallery" . }}
+
+  </div>
+</div>
+{{ end }}
