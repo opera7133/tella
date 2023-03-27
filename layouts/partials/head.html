@@ -9,6 +9,7 @@
 {{ if .Site.Params.icon.fontawesome }}
 <link href='{{ "/css/fa6.min.css" | relURL }}' rel="stylesheet" type="text/css">
 {{ end }}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
 {{ $styles := resources.Get "css/style.css" | postCSS }}
 {{ if .Site.IsServer }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
@@ -19,4 +20,5 @@
 <link rel="stylesheet" href='{{ "/css/swiper-bundle.min.css" | relURL }}'>
 <link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">
 <link rel="stylesheet" href='{{ "/css/custom.css" | relURL }}'>
+
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
