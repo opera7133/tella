@@ -5,6 +5,7 @@
   },
   {
     "title": "Sample text here...",
-    "image": "img/slide/slide02.jpg"
+    "image": "img/slide/slide02.jpg",
+    "color": "text-black"
   }
 ]
