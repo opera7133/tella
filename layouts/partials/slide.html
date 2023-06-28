@@ -4,7 +4,7 @@
         <div class="swiper-slide">
             <img src="{{ .image }}" alt="">
             <div class="s-fade-txt">
-                <h1 class="text-4xl text-white">{{ .title }}</h1>
+                <h1 class="text-4xl {{ or .color "text-white" }}">{{ .title }}</h1>
             </div>
         </div>
         {{ end }}
