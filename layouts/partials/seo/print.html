@@ -56,7 +56,7 @@
 {{- end -}}
 
 {{/* 言語 */}}
-{{- $.Scratch.SetInMap "seo" "locale" "ja_JP" -}}
+{{- $.Scratch.SetInMap "seo" "locale" (replace (or .Language.LanguageCode "ja_JP") "-" "_") -}}
 
 {{/* Canonical */}}
 {{ with .Params.seo.canonical }}

@@ -4,7 +4,7 @@
 <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale" content="{{ replace (or .Language.LanguageCode "ja_JP") "-" "_" }}" />
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:title" content="{{ .Title }}">
 
