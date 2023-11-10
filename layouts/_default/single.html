@@ -19,12 +19,15 @@
 {{ end }}
 
 {{- if .Description }}
+<meta name="description" content="{{ .Description }}" />
 <meta property="og:description" content="{{ .Description }}" />
 <meta property="twitter:description" content="{{ .Description }}" />
 {{- else if .Summary }}
+<meta name="description" content="{{ .Summary }}" />
 <meta property="og:description" content="{{ .Summary }}" />
 <meta property="twitter:description" content="{{ .Summary }}" />
 {{- else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}" />
 <meta property="og:description" content="{{ .Site.Params.description }}" />
 <meta property="twitter:description" content="{{ .Site.Params.description }}" />
 {{- end }}
