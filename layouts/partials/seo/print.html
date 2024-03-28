@@ -55,9 +55,6 @@
 	{{- $.Scratch.SetInMap "seo" "type" "event" -}}
 {{- end -}}
 
-{{/* 言語 */}}
-{{- $.Scratch.SetInMap "seo" "locale" (replace (or .Site.Language.LanguageCode "ja_JP") "-" "_") -}}
-
 {{/* Canonical */}}
 {{ with .Params.seo.canonical }}
   {{- $.Scratch.SetInMap "seo" "canonical" (. | absURL) -}}
