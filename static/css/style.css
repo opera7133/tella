@@ -2,9 +2,9 @@
 
 @font-face {
   font-family: 'icomoon';
-  src: url('./fonts/icomoon.ttf?k0g81o') format('truetype'),
-    url('./fonts/icomoon.woff?k0g81o') format('woff'),
-    url('./fonts/icomoon.svg?k0g81o#icomoon') format('svg');
+  src: url('./fonts/icomoon.ttf?w047j2') format('truetype'),
+    url('./fonts/icomoon.woff?w047j2') format('woff'),
+    url('./fonts/icomoon.svg?w047j2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,6 +26,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-x:before {
+  content: "\e900";
+}
 .icon-facebook:before {
   content: '\f09a';
 }
@@ -370,6 +373,9 @@ span.begin-task-list + ul {
 }
 .share-button:hover {
   opacity: 0.7;
+}
+.x {
+  background-color: #000;
 }
 .twitter {
   background-color: #1da1f2;

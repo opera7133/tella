@@ -6,8 +6,6 @@ Tella, A Hugo theme for Companies.
 
 The demo can be seen here: https://tella.pages.dev
 
-[![Import this project into Forestry](https://assets.forestry.io/import-to-forestryK.svg)](https://app.forestry.io/quick-start?repo=opera7133/tella&engine=hugo&version=0.80.0&config=exampleSite)
-
 ## Features
 
 - Responsive
