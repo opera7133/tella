@@ -22,10 +22,16 @@
     </div>
     {{- partial "slide.html" . -}}
     {{- partial "strip.html" . -}}
+    {{ if ne .Site.Params.showNews false }}
+    <div class="mx-auto my-10 max-w-6xl">
+        <h2 class="text-4xl ml-2">Latest News</h2>
+        {{- partial "recent-news.html" . -}}
+    </div>
+    {{ end }}
     {{ if ne .Site.Params.showBlog false }}
     <div class="mx-auto my-10 max-w-6xl">
-        <h2 class="text-4xl ml-2">Blog</h2>
-        {{- partial "recent.html" . -}}
+        <h2 class="text-4xl ml-2">Recent Posts</h2>
+        {{- partial "recent-posts.html" . -}}
     </div>
     {{ end }}
     {{- partial "footer.html" . -}}

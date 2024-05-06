@@ -1,10 +1,10 @@
-{{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.mainSections )}}
+{{ range first 3 (where site.RegularPages.ByDate.Reverse "Type" "in" site.Params.newsSections )}}
 <a href="{{ .Permalink }}">{{ partial "summary.html" . }}</a>
 {{ end }}
 
 <div class="flex flex-wrap justify-center text-gray-300 my-5">
     <a href="blog/"
         class="duration-200 px-6 py-3 bg-tlgray-800 hover:opacity-80 hover:text-white relative block focus:outline-none text-md text-center">
-        All Posts >
+        もっと見る
     </a>
 </div>
