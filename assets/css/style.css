@@ -1,6 +1,10 @@
 /* assets */
 
+<<<<<<< HEAD
 /* ! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com */
+=======
+/* ! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com */
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -457,6 +461,56 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+<<<<<<< HEAD
+=======
+::-webkit-backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 ::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1361,6 +1415,10 @@ video {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -1373,6 +1431,17 @@ video {
   height: 2.5rem;
 }
 
+<<<<<<< HEAD
+=======
+.h-auto {
+  height: auto;
+}
+
+.h-full {
+  height: 100%;
+}
+
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1423,6 +1492,7 @@ video {
 
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+<<<<<<< HEAD
 }
 
 .transform-gpu {
@@ -1443,6 +1513,8 @@ video {
 
 .cursor-move {
   cursor: move;
+=======
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 }
 
 .cursor-pointer {
@@ -1700,6 +1772,7 @@ video {
   --tw-bg-opacity: 1;
 }
 
+<<<<<<< HEAD
 .bg-none {
   background-image: none;
 }
@@ -1728,6 +1801,11 @@ video {
 
 .p-8 {
   padding: 2rem;
+=======
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 }
 
 .p-2 {
@@ -2053,6 +2131,7 @@ video {
 }
 
 .transition-colors {
+<<<<<<< HEAD
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -2062,6 +2141,11 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+=======
+  transition-property: color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -2078,8 +2162,14 @@ video {
   transition-duration: 100ms;
 }
 
+<<<<<<< HEAD
 .duration-500 {
   transition-duration: 500ms;
+=======
+.hover\:-translate-y-1:hover {
+  --tw-translate-y: -0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+>>>>>>> e84542425ebb9e43aa86ffbab4a068a2f3f02c9b
 }
 
 .hover\:-translate-y-1:hover {
@@ -2134,6 +2224,12 @@ video {
 .hover\:shadow-md:hover {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-sm:hover {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
