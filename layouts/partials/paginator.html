@@ -1,38 +1,53 @@
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 <nav aria-label="page navigation">
-    <ul class="flex list-none my-5 p-0 justify-center">
-        <!-- Don't show on 1st and 2nd page -->
-        {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
-        <li><a href="{{ $pag.First.URL }}" rel="first" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">First</a></li>
-        {{ end }}
+  <ul class="flex list-none my-5 p-0 justify-center">
+    <!-- Don't show on 1st and 2nd page -->
+    {{ if and (ne $pag.PageNumber 1) (ne $pag.PageNumber 2) }}
+    <li><a href="{{ $pag.First.URL }}" rel="first"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:shadow-sm dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">First</a>
+    </li>
+    {{ end }}
 
-        {{ if $pag.HasPrev  }}
-        <li><a href="{{ $pag.Prev.URL }}" rel="prev" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Prev</a></li>
-        {{ end }}
+    {{ if $pag.HasPrev }}
+    <li><a href="{{ $pag.Prev.URL }}" rel="prev"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:shadow-sm dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Prev</a>
+    </li>
+    {{ end }}
 
-        {{ range $pag.Pagers }}
-            {{ if eq . $pag }} <!-- Current Page -->
-            <li><a href="{{ .URL }}" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-blue-600 border-blue-600 text-white hover:border-blue-700 dark:border-gray-600">{{ .PageNumber }}</a></li>
-            {{ else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) }}
-            {{ $.Scratch.Set "dot_rendered" false }} <!-- Render prev 2 page and next 2 pages -->
-            <li><a href="{{ .URL }}" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">{{ .PageNumber }}</a></li>
-            {{ else if eq ($.Scratch.Get "dot_rendered") false }} <!-- render skip pages -->
-            {{ $.Scratch.Set "dot_rendered" true }}
-            <li><a class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 cursor-auto Class
+    {{ range $pag.Pagers }}
+    {{ if eq . $pag }}
+    <!-- Current Page -->
+    <li><a href="{{ .URL }}"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-blue-600 border-blue-600 text-white hover:border-blue-700 dark:border-gray-600">{{
+        .PageNumber }}</a></li>
+    {{ else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) }}
+    {{ $.Scratch.Set "dot_rendered" false }}
+    <!-- Render prev 2 page and next 2 pages -->
+    <li><a href="{{ .URL }}"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:shadow-sm dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">{{
+        .PageNumber }}</a></li>
+    {{ else if eq ($.Scratch.Get "dot_rendered") false }}
+    <!-- render skip pages -->
+    {{ $.Scratch.Set "dot_rendered" true }}
+    <li><a class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 cursor-auto Class
                 Properties
                 pointer-events-none">...</a></li>
-            {{ end }}
-        {{ end }}
+    {{ end }}
+    {{ end }}
 
-        {{ if $pag.HasNext }}
-        <li><a href="{{ $pag.Next.URL }}" rel="next" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100  bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Next</a></li>
-        {{ end }}
+    {{ if $pag.HasNext }}
+    <li><a href="{{ $pag.Next.URL }}" rel="next"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100  bg-white text-blue-600 hover:shadow-sm dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Next</a>
+    </li>
+    {{ end }}
 
-        <!-- Don't show on last and 2nd last page -->
-        {{ if and (ne $pag.PageNumber $pag.TotalPages) ((ne $pag.PageNumber (sub $pag.TotalPages 1))) }}
-        <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last" class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:bg-gray-400 hover:text-blue-700 dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Last</a></li>
-        {{ end }}
-    </ul>
+    <!-- Don't show on last and 2nd last page -->
+    {{ if and (ne $pag.PageNumber $pag.TotalPages) ((ne $pag.PageNumber (sub $pag.TotalPages 1))) }}
+    <li class="page-item"><a href="{{ $pag.Last.URL }}" rel="last"
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-white text-blue-600 hover:shadow-sm dark:bg-warmgray-900 dark:border-gray-600 dark:hover:bg-warmgray-700">Last</a>
+    </li>
+    {{ end }}
+  </ul>
 </nav>
 {{ end }}

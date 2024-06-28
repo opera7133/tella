@@ -1,0 +1,23 @@
+{
+  "name": "tella",
+  "version": "0.0.1",
+  "description": "Simple, Light, Responsive",
+  "main": "index.js",
+  "repository": "https://github.com/opera7133/tella",
+  "author": "wamo <ainznino@pm.me>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently npm:watch:*",
+    "watch:tw": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css --watch",
+    "watch:hugo": "hugo server",
+    "build": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css && hugo --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "autoprefixer": "^10.4.7",
+    "concurrently": "^8.0.1",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.6"
+  }
+}
