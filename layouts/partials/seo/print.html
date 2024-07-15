@@ -10,7 +10,7 @@
 {{- $.Scratch.SetInMap "seo" "updated_time" (.Lastmod.Format "2006-01-02T15:04:05-07:00") -}}
 {{- end -}}
 
- 
+
 {{/* 説明 */}}
 {{ $description := "" }}
 {{/* 1. SEO Description */}}
@@ -55,9 +55,6 @@
 	{{- $.Scratch.SetInMap "seo" "type" "event" -}}
 {{- end -}}
 
-{{/* 言語 */}}
-{{- $.Scratch.SetInMap "seo" "locale" "ja_JP" -}}
-
 {{/* Canonical */}}
 {{ with .Params.seo.canonical }}
   {{- $.Scratch.SetInMap "seo" "canonical" (. | absURL) -}}
@@ -79,9 +76,7 @@
 {{ if .Params.image }}
     {{ with .Params.image }}
 <meta property="og:image" content="{{ . | absURL }}">
-<meta property="og:image:url" content="{{ . | absURL }}">
     {{ end }}
 {{ else }}
 <meta property="og:image" content="{{ .Site.Params.og_image | absURL }}">
-<meta property="og:image:url" content="{{ .Site.Params.og_image | absURL }}">
 {{ end }}

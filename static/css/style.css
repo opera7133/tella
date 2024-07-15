@@ -2,9 +2,9 @@
 
 @font-face {
   font-family: 'icomoon';
-  src: url('./fonts/icomoon.ttf?k0g81o') format('truetype'),
-    url('./fonts/icomoon.woff?k0g81o') format('woff'),
-    url('./fonts/icomoon.svg?k0g81o#icomoon') format('svg');
+  src: url('./fonts/icomoon.ttf?w047j2') format('truetype'),
+    url('./fonts/icomoon.woff?w047j2') format('woff'),
+    url('./fonts/icomoon.svg?w047j2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -26,77 +26,80 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-facebook:before {
-  content: '\f09a';
-}
-.icon-get-pocket:before {
-  content: '\f265';
-}
-.icon-line:before {
-  content: '\e90e';
-}
-.icon-hatenabookmark:before {
-  content: '\e90f';
-}
-.icon-discord:before {
-  content: '\e907';
-}
-.icon-email:before {
-  content: '\e902';
+.icon-x:before {
+  content: "\e900";
 }
 .icon-message:before {
-  content: '\e900';
+  content: "\e901";
 }
 .icon-create:before {
-  content: '\e901';
+  content: "\e902";
+}
+.icon-email:before {
+  content: "\e903";
 }
 .icon-access_time:before {
-  content: '\e903';
-}
-.icon-file_download:before {
-  content: '\e90b';
-}
-.icon-folder:before {
-  content: '\e908';
-}
-.icon-desktop_windows:before {
-  content: '\e906';
+  content: "\e904";
 }
 .icon-keyboard_arrow_left:before {
-  content: '\e904';
+  content: "\e905";
 }
 .icon-keyboard_arrow_right:before {
-  content: '\e905';
+  content: "\e906";
 }
-.icon-keyboard_arrow_up:before {
-  content: '\e90d';
+.icon-desktop_windows:before {
+  content: "\e907";
 }
-.icon-remove_red_eye:before {
-  content: '\e90c';
+.icon-discord:before {
+  content: "\e908";
 }
-.icon-person:before {
-  content: '\e90a';
+.icon-folder:before {
+  content: "\e909";
 }
 .icon-lightbulb_outline:before {
-  content: '\e909';
+  content: "\e90a";
+}
+.icon-person:before {
+  content: "\e90b";
+}
+.icon-file_download:before {
+  content: "\e90c";
+}
+.icon-remove_red_eye:before {
+  content: "\e90d";
+}
+.icon-keyboard_arrow_up:before {
+  content: "\e90e";
+}
+.icon-line:before {
+  content: "\e90f";
+}
+.icon-hatenabookmark:before {
+  content: "\e910";
 }
 .icon-price-tag:before {
-  content: '\e935';
+  content: "\e935";
 }
 .icon-sphere:before {
-  content: '\e9c9';
+  content: "\e9c9";
 }
 .icon-link:before {
-  content: '\e9cb';
+  content: "\e9cb";
 }
 .icon-twitter:before {
-  content: '\ea96';
+  content: "\ea96";
 }
 .icon-youtube:before {
-  content: '\ea9d';
+  content: "\ea9d";
 }
 .icon-github:before {
-  content: '\eab0';
+  content: "\eab0";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-get-pocket:before {
+  content: "\f265";
 }
 body {
   font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
@@ -370,6 +373,9 @@ span.begin-task-list + ul {
 }
 .share-button:hover {
   opacity: 0.7;
+}
+.x {
+  background-color: #000;
 }
 .twitter {
   background-color: #1da1f2;

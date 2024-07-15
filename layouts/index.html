@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ or .Site.Language.Lang "ja" }}">
 
 <head>
     {{- partial "head.html" . -}}
@@ -22,10 +22,12 @@
     </div>
     {{- partial "slide.html" . -}}
     {{- partial "strip.html" . -}}
+    {{ if ne .Site.Params.showBlog false }}
     <div class="mx-auto my-10 max-w-6xl">
         <h2 class="text-4xl ml-2">最新消息</h2>
         {{- partial "recent.html" . -}}
     </div>
+    {{ end }}
     {{- partial "footer.html" . -}}
     <script src="{{ "/js/swiper-bundle.min.js" | relURL }}"></script>
     <script>
