@@ -86,7 +86,7 @@
                     <a class="previous lg:text-2xl" href="{{.Permalink}}">
                         <div
                             class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                            <span class="icon-keyboard_arrow_left"></span> {{.Title}}
+                            <span class="icon-keyboard_arrow_left"></span> {{.Title | truncate 10 "…"}}
                         </div>
                     </a>
                     {{ end }}
@@ -95,7 +95,7 @@
                 <a class="next lg:text-2xl" href="{{.Permalink}}">
                     <div
                         class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                        {{.Title}} <span class="icon-keyboard_arrow_right"></span>
+                        {{.Title | truncate 10 "…"}} <span class="icon-keyboard_arrow_right"></span>
                     </div>
                 </a>
                 {{ end }}
