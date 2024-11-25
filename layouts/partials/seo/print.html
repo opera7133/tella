@@ -42,7 +42,7 @@
 {{- $.Scratch.SetInMap "seo" "twitter_card" "summary_large_image" -}}
 
 {{/* We check the site config sports a Social.twitter and use as handle */}}
-{{- with .Site.Social.twitter -}}
+{{- with .Site.Params.Social.twitter -}}
 	{{- $.Scratch.SetInMap "seo" "twitter_handle" (printf "@%s" .) -}}
 {{- end -}}
 
