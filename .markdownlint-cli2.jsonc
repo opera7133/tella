@@ -1,0 +1,35 @@
+{
+  "config": {
+    "default": true,
+    "MD001": false,
+    "MD009": false,
+    "MD010": false,
+    "MD012": false,
+    "MD047": false,
+    "MD050": false,
+    "MD022": false,
+    "MD032": false,
+    "MD058": false,
+    "MD013": false,
+    "MD023": false,
+    "MD024": false,
+    "MD025": false,
+    "MD026": false,
+    "MD033": false,
+    "MD034": false,
+    "MD051": false,
+    "MD053": false,
+    "MD055": false,
+    "MD056": false,
+    "MD029": false,
+    "MD052": false,
+    "MD041": false,
+    "MD046": false,
+    "MD045": false,
+    "MD014": false,
+  },
+  "ignores": [
+    "node_modules",
+    "CHANGELOG.md"
+  ]
+}
