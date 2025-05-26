@@ -1,6 +1,6 @@
 {
   "name": "tellafunk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tellafunk theme for hugo",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "lint:scripts": "eslint assets/js --no-error-on-unmatched-pattern",
     "lint:styles": "stylelint \"assets/css/**/*.{css,sass,scss,sss,less}\" --allow-empty-input",
     "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\" \"exampleSite/**/*.md\"",
-    "fix:lint": "stylelint --fix \"assets/css/**/*.{css,sass,scss,sss,less}\" --allow-empty-input"
+    "fix:lint": "stylelint --fix \"assets/css/**/*.{css,sass,scss,sss,less}\" --allow-empty-input",
+    "copy:flowbite": "cpy node_modules/flowbite/dist/flowbite.min.js static/js --flat"
   },
   "repository": {
     "type": "git",
@@ -27,7 +28,10 @@
   },
   "homepage": "https://github.com/anoduck/tellafunk#readme",
   "devDependencies": {
+    "cpy-cli": "^5.0.0",
     "eslint": "^9.27.0",
+    "flowbite": "^3.1.2",
+    "husky": "^9.1.7",
     "markdownlint-cli2": "^0.18.1",
     "npm-run-all": "^4.1.5",
     "stylelint": "^16.19.1",
