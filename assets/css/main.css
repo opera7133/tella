@@ -1,3 +1,6 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
 /* assets */
 @tailwind base;
 @tailwind components;
