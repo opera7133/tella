@@ -3,6 +3,7 @@ Licensed under MIT License 2024, Anoduck, The Anonymous Duck
 https://anoduck.mit-license.org
 https://github.com/anoduck
 -->
+{{- $source := "" -}}
 
 {{- partial "analytics" . -}}
 <!-- Meta Shit -->
@@ -23,22 +24,21 @@ https://github.com/anoduck
 
 <!--- Use Hugo to process the tailwind css -->
 
-{{- $source := "css/main.css" -}}
-
-
 {{ with (templates.Defer (dict "key" "global")) }}
-    {{- warnf "Generating Tailwind styles..." }}
-    {{ with resources.Get $source }}
-        {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
-            {{ with . | css.TailwindCSS $opts }}
-                {{ if hugo.IsDevelopment }}
-                    <link rel="stylesheet" href="{{ .RelPermalink }}">
-                {{ else }}
-                    {{ with . | fingerprint }}
-                        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+    {{ with resources.Get "css/main.css" }}
+        {{- warnf "Generating Tailwind styles..." }}
+        {{ with resources.Get $source }}
+            {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+                {{ with . | css.TailwindCSS $opts }}
+                    {{ if hugo.IsDevelopment }}
+                        <link rel="stylesheet" href="{{ .RelPermalink }}">
+                    {{ else }}
+                        {{ with . | fingerprint }}
+                            <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+                        {{ end }}
                     {{ end }}
                 {{ end }}
-            {{ end }}
+        {{ end }}
     {{ end }}
 {{ end }}
 
