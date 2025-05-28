@@ -1,23 +1,51 @@
+<!--
+Licensed under MIT License 2024, Anoduck, The Anonymous Duck
+https://anoduck.mit-license.org
+https://github.com/anoduck
+-->
+
 {{- partial "analytics" . -}}
+<!-- Meta Shit -->
 <meta charset="utf-8">
 <title>{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Favicon -->
 <link rel="apple-touch-icon" sizes="180x180" href='{{ "apple-touch-icon.png" | relURL }}'>
 <link rel="icon" type="image/png" sizes="32x32" href='{{ "favicon-32x32.png" | relURL }}'>
 <link rel="icon" type="image/png" sizes="16x16" href='{{ "favicon-16x16.png" | relURL }}'>
 <link rel="manifest" href='{{ "site.webmanifest" | relURL }}'>
+
+<!-- Stylesheet -->
 {{ if .Site.Params.icon.fontawesome }}
-<link href='{{ "/css/fa6.min.css" | relURL }}' rel="stylesheet" type="text/css">
+    <link href='{{ "/css/fa6.min.css" | relURL }}' rel="stylesheet" type="text/css">
 {{ end }}
-{{ $styles := resources.Get "css/style.css" | postCSS }}
-{{ if hugo.IsServer }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}">
-{{ else }}
-{{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
+
+<!--- Use Hugo to process the tailwind css -->
+
+{{- $source := "css/main.css" -}}
+
+
+{{ with (templates.Defer (dict "key" "global")) }}
+    {{- warnf "Generating Tailwind styles..." }}
+    {{ with resources.Get $source }}
+        {{ $opts := dict "minify" (not hugo.IsDevelopment) }}
+            {{ with . | css.TailwindCSS $opts }}
+                {{ if hugo.IsDevelopment }}
+                    <link rel="stylesheet" href="{{ .RelPermalink }}">
+                {{ else }}
+                    {{ with . | fingerprint }}
+                        <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+    {{ end }}
 {{ end }}
+
+<!-- Load Swiper for homepage -->
 {{ if .IsHome }}
 <link rel="stylesheet" href='{{ "/css/swiper-bundle.min.css" | relURL }}'>
 {{ end }}
+
 <link href='{{ "/css/style.min.css" | relURL }}' rel="stylesheet" type="text/css">
 <link rel="stylesheet" href='{{ "/css/custom.css" | relURL }}'>
