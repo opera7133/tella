@@ -1,6 +1,6 @@
 {{- $formKey := "" -}}
 
-{{- $formKey = .Site.Params.formKey -}}
+{{- $formKey = .Site.Params.contactform.apiKey -}}
 <link href="css/form-validation.css" rel="stylesheet">
 <form name="contact" class="needs-validation" id="contact" action="https://api.staticforms.xyz/submit" method="POST">
     <div class="mb-3">
