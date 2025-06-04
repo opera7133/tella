@@ -4,4 +4,6 @@ assets/scss/components/_syntax-light.scss
 assets/scss/vendor
 assets/scss/theme/fonts.scss
 assets/scss/app.scss
+assets/css/main.css
+assets/css/style.css
 node_modules
