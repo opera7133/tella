@@ -1,6 +1,6 @@
 {
   "name": "tellafunk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Tellafunk theme for hugo",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "lint:styles": "stylelint \"assets/css/**/*.{css,sass,scss,sss,less}\" --allow-empty-input",
     "lint:markdown": "markdownlint-cli2 \"*.md\" \"content/**/*.md\" \"exampleSite/**/*.md\"",
     "fix:lint": "stylelint --fix \"assets/css/**/*.{css,sass,scss,sss,less}\" --allow-empty-input",
-    "copy:flowbite": "cpy node_modules/flowbite/dist/flowbite.min.js static/js --flat"
+    "copy:flowbite": "cpy node_modules/flowbite/dist/flowbite.min.js static/js --flat",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
