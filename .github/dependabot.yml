@@ -5,7 +5,5 @@ updates:
   schedule:
     interval: daily
     time: "20:00"
-    timezone: Asia/Tokyo
+    timezone: America/New_York
   open-pull-requests-limit: 10
-  labels:
-  - automerge
