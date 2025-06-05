@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "site.css";
 @source "hugo_stats.json";
 
 /* assets */
