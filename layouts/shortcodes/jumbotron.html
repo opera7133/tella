@@ -6,7 +6,7 @@ https://github.com/anoduck
 
 {{- $error := false -}}
 
-{{- $bg := "" -}}
+{{- $bgImg := "" -}}
 {{- $bgUrl := "" -}}
 {{- $headline := "" -}}
 {{- $button := "" -}}
@@ -14,25 +14,26 @@ https://github.com/anoduck
 {{- $btnText := "" -}}
 
 {{- if .IsNamedParams }}
-    {{- $bg = .Get "img" -}}
+    {{- $bgImg = .Get "bgImg" -}}
     {{- $headline = .Get "headline" -}}
     {{- $button = .Get "button" -}}
     {{- $btnLink = .Get "btnLink" -}}
     {{- $btnText = .Get "btnText" -}}
 {{ else }}
-    {{- $bg = .Get 0 -}}
+    {{- $bgImg = .Get 0 -}}
     {{- $headline = .Get 1 -}}
     {{- $button = .Get 2 -}}
     {{- $btnLink = .Get 3 -}}
     {{- $btnText = .Get 4 -}}
 {{ end -}}
 
-{{- $bgUrl = print "bg-[url('" $bg "')]" -}}
+{{ warnf "Using Background Image:" $bgImg }}
+{{- $bgUrl = print "bg-[url('" $bgImg "')]" -}}
 
-<section class="object-cover bg-center bg-no-repeat {{ $bgUrl }} bg-gray-700 bg-blend-multiply">
-    <div class="px-4 py-24 mx-auto max-w-screen-xl text-center lg:py-56">
+<section class="flex flex-col bg-local bg-clip-border bg-origin-border object-cover bg-cover bg-center bg-no-repeat box-border {{ $bgUrl | safeHTML }}">
+    <div class="px-4 py-24 mx-auto max-w-screen-xl lg:py-36">
         {{ with $headline }}
-            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+            <h1 class="mb-4 text-3xl font-extrabold tracking-tight text-shadow-lg leading-none text-white md:text-4xl lg:text-5xl">
                 {{ . | safeHTML }}
             </h1>
         {{ end }}
@@ -40,7 +41,7 @@ https://github.com/anoduck
             <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">{{ . | safeHTML }}</p>
         {{ end }}
         {{- if $button }}
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0">
                 <a href="{{ $btnLink | safeHTML }}" class="inline-flex justify-center items-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
                     {{ $btnText | safeHTML }}
                     <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
