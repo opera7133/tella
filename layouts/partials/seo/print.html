@@ -1,6 +1,6 @@
 {{- $.Scratch.Set "seo" dict -}}
 
-{{/* 日付 */}}
+{{/* Date */}}
 {{- if not .PublishDate.IsZero -}}
 {{- $.Scratch.SetInMap "seo" "published_time" (.PublishDate.Format "2006-01-02T15:04:05-07:00") -}}
 {{- else if not .Date.IsZero -}}
@@ -11,7 +11,7 @@
 {{- end -}}
 
 
-{{/* 説明 */}}
+{{/* Description */}}
 {{ $description := "" }}
 {{/* 1. SEO Description */}}
 {{- if .Params.seo.description -}}
@@ -22,7 +22,7 @@
 	{{- $description = .Params.description | plainify -}}
 {{/* 3. Summary  */}}
 {{- else if .Summary -}}
-	{{- $description = substr .Summary 0 60 | plainify -}}
+	{{- $description = substr .Summary 0 .Site.Params.summaryLength | plainify -}}
 {{- else -}}
 {{/* 4. site description  */}}
 	{{ $description = .Site.Params.Description }}
@@ -30,7 +30,7 @@
 
 {{- $.Scratch.SetInMap "seo" "description" $description -}}
 
-{{/* サイト名 */}}
+{{/* Site Name */}}
 {{- with .Param "seo.site_name" -}}
 	{{- $.Scratch.SetInMap "seo" "site_name" . -}}
 {{- else -}}
@@ -46,7 +46,7 @@
 	{{- $.Scratch.SetInMap "seo" "twitter_handle" (printf "@%s" .) -}}
 {{- end -}}
 
-{{/* 種類 */}}
+{{/* Type */}}
 {{- $.Scratch.SetInMap "seo" "type" "website" -}}
 
 {{- if in (slice "blog" "news") .Type -}}
