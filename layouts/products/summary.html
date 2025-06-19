@@ -1,8 +1,24 @@
-<a href="{{ .Permalink }}">
-    <div class="summary border p-3">
-        <h2 class="text-3xl">
-            {{ .Title }}
-        </h2>
-        <p>{{ .Description }}</p>
+<!---
+Licensed under MIT License 2025, Anoduck, The Anonymous Duck
+https://anoduck.mit-license.org
+https://github.com/anoduck
+
+The Hugo Tella theme was created by Opera7133, and is sourced at https://github.com/opera7133/tella
+This theme was then highly modified by Anoduck, The Anonymous Duck
+It is sourced at https://github.com.anoduck/tellafunk
+--->
+<!--
+Copyright &copy; 2025 Anoduck, The Anonymous Duck.
+Use of this source code is governed by The MIT License (MIT) found at https://anoduck.mit-license.org.
+--->
+<a href="{{ .Permalink }}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+    <img class="p-8 rounded-t-lg" src="{{ .Thumbnail }}" alt="{{ .Title | safeHTML }}" />
+    <div class="summary border px-5 pb-5">
+        <a href="{{ .Permalink }}">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ .Title | safeHTML }}</h5>
+        </a>
+        <div class="flex items-center mt-2.5 mb-3">
+            <p class="font-normal text-gray-900 dark:text-white">{{ .Description | safeHTML }}</p>
+        </div>
     </div>
 </a>
