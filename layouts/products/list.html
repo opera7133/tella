@@ -1,13 +1,77 @@
+<!---
+Licensed under MIT License 2025, Anoduck, The Anonymous Duck
+https://anoduck.mit-license.org
+https://github.com/anoduck
+
+The Hugo Tella theme was created by Opera7133, and is sourced at https://github.com/opera7133/tella
+This theme was then highly modified by Anoduck, The Anonymous Duck
+It is sourced at https://github.com/anoduck/tellafunk
+--->
+<!--
+Copyright &copy; 2025 Anoduck, The Anonymous Duck.
+Use of this source code is governed by The MIT License (MIT) found at https://anoduck.mit-license.org.
+--->
+
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl">
-    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-        <h1 class="title text-5xl mb-4">{{.Title}}</h1>
-        <div class="content py-1">{{.Content}}</div>
-        <div class="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
-        {{ range .Pages.ByWeight }}
-        {{ .Render "summary" }}
-        {{ end }}
+
+    <!-- Initialize Arguements -->
+    {{- $file := . -}}
+    {{- $debug := "" | default false -}}
+
+    <!-- Set Debug -->
+    {{- if .Site.Params.debug }}
+        {{- $debug = true -}}
+    {{ end }}
+
+    <!-- Main Code goes here -->
+    <div class="mx-auto my-10 max-w-6xl">
+        <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+            <h1 class="title text-5xl mb-4">{{.Title}}</h1>
+            <div class="content py-1">{{.Content}}</div>
         </div>
     </div>
-</div>
+    <!-- The main wrapper --->
+    <div id="default-carousel" class="relative w-full" data-carousel="slide">
+        <!-- Carousel wrapper -->
+        <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            {{ range .Pages.ByWeight }}
+                {{ .Render "summary" }}
+            {{ end }}
+        </div>
+        <!-- Slider controls -->
+        <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                </svg>
+                <span class="sr-only">Previous</span>
+            </span>
+        </button>
+        <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="sr-only">Next</span>
+            </span>
+        </button>
+    </div>
+
+    <!-- Provide debug information -->
+    {{- if debug }}
+        <h3>Debug Output</h3>
+        <p>The following values were used in the product_list</p>
+        <h4>Single Values Variables</h4>
+        <ul>
+            <li>Title = {{ .Title }} </li>
+            <li>Content = {{ .Content }}</li>
+        </ul>
+        <h4>Page Content</h4>
+        <ul>
+            {{ range .Pages.ByWeight }}
+                {{ .Render "summary" }}
+            {{ end }}
+        </ul>
+    {{ end }}
+
 {{ end }}

@@ -24,13 +24,15 @@ https://github.com/anoduck
 {{ end -}}
 
 <div class="grid grid-rows-6 grid-cols-6 grid-flow-col gap-2 items-center w-full bg-white rounded-lg border border-gray-200 shadown-sm dark:bg-gray-800 dark:border-gray-700">
-    <div class="col-start-1 col-span-3 row-span-6 items-center p-4 leading-normal">
+    <div class="col-start-1 col-span-3 row-span-6 items-center p-2 leading-normal">
         <img class="object-contain w-full rounded-t-lg rounded-b-lg h-auto shadown-lg rounded-none" src="{{ $img | safeHTML }}" alt="{{ $alt | safeHTML }}"/>
     </div>
-    <div class="col-start-4 col-span-3 row-span-2 row-start-1">
-        <h2 class="mb-1 text-3xl leading-none font-large underline underline-offset-3 decoration-4 text-gray-900 dark:text-white">{{ $name | safeHTML }}</h2>
+    <div class="col-start-4 col-span-3 row-span-1 row-start-2">
+        <h2 class="mb-1 text-5xl leading-none underline underline-offset-3 decoration-4 text-gray-900 dark:text-white">{{ $name | safeHTML }}</h2>
     </div>
-    <div class="col-start-4 col-span-3 row-span-1 row-start-3 text-sm text-gray-500 dark:text-gray-400">{{ $position | safeHTML }}</div>
+    <div class="col-start-4 col-span-3 row-span-1 row-start-3">
+        <h3 class="mb-1 text-3xl leading-none text-gray-500 dark:text-gray-400">{{ $position | safeHTML }}</h3>
+    </div>
     <div class="col-start-4 col-span-3 row-span-3 row-end-7">
         <p class="mb-3 text-gray-500 dark:text-gray-400">{{ .Inner | safeHTML }}</p>
     </div>
