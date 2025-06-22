@@ -8,17 +8,33 @@ This theme was then highly modified by Anoduck, The Anonymous Duck
 It is sourced at https://github.com.anoduck/tellafunk
 --->
 <!--
-Copyright &copy; 2025 Anoduck, The Anonymous Duck.
+Copyright &#169; 2025 Anoduck, The Anonymous Duck.
 Use of this source code is governed by The MIT License (MIT) found at https://anoduck.mit-license.org.
 --->
-<a href="{{ .Permalink }}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-    <img class="p-8 rounded-t-lg" src="{{ .Thumbnail }}" alt="{{ .Title | safeHTML }}" />
-    <div class="summary border px-5 pb-5">
-        <a href="{{ .Permalink }}">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{ .Title | safeHTML }}</h5>
-        </a>
-        <div class="flex items-center mt-2.5 mb-3">
-            <p class="font-normal text-gray-900 dark:text-white">{{ .Description | safeHTML }}</p>
+
+{{ warnf "Generating card for product" }}
+{{- $link := .Permalink | safeHTML -}}
+{{- $title := .Title | safeHTML -}}
+{{- $desc := .Description | safeHTML -}}
+{{- $img := .Param "image" -}}
+
+<div class="col-span-2 row-span-2">
+{{if .Param "image" }}
+    <a href="{{ $link }}" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow-sm md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="{{ $img }}" alt="{{ $title }}">
+        <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $title }}</h5>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $desc }}</p>
         </div>
-    </div>
-</a>
+    </a>
+
+{{ else }}
+
+    <a href="{{ $link }}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $title }}</h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">{{ $desc }}</p>
+    </a>
+
+{{end}}
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+
+{{ warnf "generating product list" }}
+
+<head>
+  {{- partial "head.html" . -}}
+  {{ block "meta_tags" . }}{{end}}
+</head>
+
+<body class="flex flex-col min-h-screen">
+  <main class="flex-grow">
+    {{- partial "header.html" . -}}
+    <div class="scroll-top rounded-full">
+      <span class="icon-keyboard_arrow_up text-2xl"></span>
+    </div>
+    {{- block "main" . }}{{- end }}
+  </main>
+  {{- partial "footer.html" . -}}
+</body>
+
+</html>

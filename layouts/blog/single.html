@@ -2,6 +2,8 @@
 <meta property="og:title" content="{{site.Title}}{{if not .IsHome}} | {{.Title}}{{end}}" />
 {{ partial "seo/print.html" . }}
 
+{{ warnf "rendering blog page" }}
+
 {{- with .Site.Params.facebookAppId }}
 <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
