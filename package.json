@@ -1,6 +1,6 @@
 {
   "name": "tellafunk",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Tellafunk theme for hugo",
   "main": "index.js",
   "scripts": {
