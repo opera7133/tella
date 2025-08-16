@@ -13,6 +13,7 @@
     "build": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css && hugo --minify"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.12",
     "@tailwindcss/typography": "^0.5.12",
     "autoprefixer": "^10.4.19",
     "concurrently": "^9.0.0",
@@ -21,3 +22,4 @@
     "tailwindcss": "^4.0.1"
   }
 }
+
