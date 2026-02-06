@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-<div class="mx-auto my-10 max-w-6xl">
+{{/*  <div class="mx-auto my-10 max-w-6xl">
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
         <h1 class="title text-4xl mb-4">Race Team IROS 2025</h1>
         <div class="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
@@ -24,7 +24,19 @@
         {{ end }}
         </div>
     </div>
-</div>
+</div>  */}}
+<div class="mx-auto my-10 max-w-6xl"> 
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <h1 class="title text-4xl mb-4">Advisors</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 mb-2 gap-2">
+        {{ range .Pages.ByWeight }}
+            {{ if eq .Weight 5 }}
+                {{ .Render "summary" }}
+            {{ end }}
+        {{ end }}
+        </div>
+    </div>
+</div> 
 <div class="mx-auto my-10 max-w-6xl"> 
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
         <h1 class="title text-4xl mb-4">Race Team ICRA 2026</h1>
