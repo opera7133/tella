@@ -49,9 +49,9 @@ git submodule update --remote --merge
 
 ### Install dependencies
 
-Copy at least the following files from `themes/tella/exampleSite` to the root folder of your site.
+You need [Node.js](https://nodejs.org/) before installation.
 
-- package.json
+Copy `package.json` from `themes/tella/exampleSite` to the root folder of your site.
 
 After that, run this command.
 
