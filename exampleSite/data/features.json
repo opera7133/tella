@@ -2,17 +2,17 @@
   {
     "title": "Simple",
     "description": "All the bare necessities are there.",
-    "icon": "icon-desktop_windows"
+    "icon": "bi bi-box"
   },
   {
     "title": "Fast",
     "description": "Light weight and fast loading speed.",
-    "icon": "icon-lightbulb_outline"
+    "icon": "bi bi-lightning-charge"
   },
   {
     "title": "Github",
     "description": "Please fork the Github repository and contribute to this theme!",
-    "icon": "icon-github",
-    "link": "https://github.com/opera7133/tella"
+    "link": "https://github.com/opera7133/tella",
+    "icon": "bi bi-github"
   }
 ]

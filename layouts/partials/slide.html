@@ -1,14 +1,14 @@
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        {{ range .Site.Data.slide }}
-        <div class="swiper-slide">
-            <img src="{{ .image }}" alt="{{ .alt }}">
-            <div class="s-fade-txt">
-                <h1 class="text-4xl {{ or .color "text-white" }}">{{ .title }}</h1>
-            </div>
-        </div>
-        {{ end }}
+<div class="splide" role="group" aria-label="Top Page Slides">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {{ range .Site.Data.slide }}
+            <li class="splide__slide">
+                <img src="{{ .image }}" alt="{{ .alt }}">
+                <div class="s-fade-txt">
+                    <h1 class="text-4xl {{ or .color "text-white" }}">{{ .title }}</h1>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
 </div>

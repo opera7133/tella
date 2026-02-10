@@ -1,0 +1,23 @@
+<div class="giscus mt-5"></div>
+<script>
+  (function() {
+    const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const giscusScript = document.createElement('script');
+    giscusScript.src = 'https://giscus.app/client.js';
+    giscusScript.dataset.repo = '{{ .Site.Params.giscus.repo }}';
+    giscusScript.dataset.repoId = '{{ .Site.Params.giscus.repo_id }}';
+    giscusScript.dataset.category = '{{ .Site.Params.giscus.category }}';
+    giscusScript.dataset.categoryId = '{{ .Site.Params.giscus.category_id }}';
+    giscusScript.dataset.mapping = '{{ .Site.Params.giscus.mapping | default "pathname" }}';
+    giscusScript.dataset.strict = '{{ .Site.Params.giscus.strict | default "0" }}';
+    giscusScript.dataset.reactionsEnabled = '{{ .Site.Params.giscus.reactions_enabled | default "1" }}';
+    giscusScript.dataset.emitMetadata = '{{ .Site.Params.giscus.emit_metadata | default "0" }}';
+    giscusScript.dataset.inputPosition = '{{ .Site.Params.giscus.input_position | default "bottom" }}';
+    giscusScript.dataset.theme = theme;
+    giscusScript.dataset.lang = '{{ .Site.Params.giscus.lang | default .Site.Language.Lang | default "en" }}';
+    {{ with .Site.Params.giscus.loading }}giscusScript.dataset.loading = '{{ . | default "lazy" }}';{{ end }}
+    giscusScript.setAttribute('crossorigin', 'anonymous');
+    giscusScript.async = true;
+    document.body.appendChild(giscusScript);
+  })();
+</script>

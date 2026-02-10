@@ -5,13 +5,13 @@
             {{ range .Site.Data.features }}
             {{if .link }}<a href="{{ .link }}">{{ end }}
                 <div
-                    class="bg-white text-center mx-2 px-4 py-10 flex flex-row justify-center items-center duration-300 transform h-full hover:-translate-y-1 hover:shadow-lg">
+                    class="bg-white text-center mx-2 px-4 py-10 flex flex-row justify-center items-center duration-300 h-full hover:-translate-y-1 hover:shadow-lg">
                     <div class="p-1">
                         {{if .icon }}
                         <span class="{{ .icon }} text-5xl"></span>
                         {{ end }}
                         <h2 class="text-2xl">{{ .title }}</h2>
-                        <p class="sans">{{ .description | markdownify }}</p>
+                        <p class="font-sans">{{ .description | markdownify }}</p>
                     </div>
                 </div>
                 {{if .link }}

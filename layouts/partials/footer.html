@@ -1,20 +1,13 @@
 <footer class="bg-tlgray-100">
   {{ if not .IsHome }}
-  <script src='{{ "/js/clipboard.min.js" | relURL }}'></script>
-  <script src='{{ "/js/highlight.min.js" | relURL }}'></script>
-  <script src='{{ "/js/highlightjs-line-numbers.min.js" | relURL }}'></script>
-  <script src='{{ "/js/sweetalert2.min.js" | relURL }}'></script>
   <script>
-    hljs.initHighlightingOnLoad();
-    hljs.initLineNumbersOnLoad();
-    new ClipboardJS('.url');
-
     function OnClickURL() {
-      Swal.fire({
-        icon: 'success',
-        title: 'Copied!',
-        text: 'Copied the URL and title.'
-      })
+      var url = document.getElementById("url").dataset.clipboardText;
+      navigator.clipboard.writeText(url).then(function() {
+        alert('Copied the URL and title.');
+      }).catch(function(error) {
+        console.error('Copy failed', error);
+      });
     }
   </script>
   {{ end }}
@@ -61,7 +54,7 @@
       </div>
     </div>
   </div>
-  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-md">
+  <div class="copy pl-8 py-5 bg-tlgray-700 text-white text-base">
     &copy; {{site.Title}} {{ now.Year }} All Rights Reserved.
   </div>
 </footer>

@@ -6,87 +6,96 @@
 <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
 <meta name="twitter:title" content="{{ .Title }}">
-<link rel="preload" href='{{ "/css/sweetalert2.min.css" | relURL }}' as="style"
-    onload="this.onload=null;this.rel='stylesheet'">
+
 {{ end }}
 {{ define "main" }}
 <div class="mx-auto my-10 max-w-6xl">
     <div class="mx-3 col-span-3 lg:col-span-2 px-2">
         <h1 class="title text-5xl font-bold mb-3">{{.Title}}</h1>
         <section class="mb-4 text-lg">
-            <h4 id="date" class="flex flex-row items-center"><span class="icon-access_time text-2xl mr-2"></span>
-                {{ .Date.Format "2006/01/02" }} </h4>
+            <h4 id="date" class="flex flex-row items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
+                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                </svg>
+                {{ .Date.Format "2006/01/02" }}
+            </h4>
             {{ if .Params.author }}
-            <h4 class="flex flex-row items-center"><span class="icon-person text-2xl mr-2"></span>{{.Params.author}}
+            <h4 class="flex flex-row items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+                {{.Params.author}}
             </h4>
             {{ end }}
             {{ with .Params.categories }}
             <div id="categories" class="flex flex-row items-center">
-                <span class="icon-folder text-2xl mr-1"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="mr-2" viewBox="0 0 16 16">
+                    <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.825a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3m-8.322.12q.322-.119.684-.12h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981z"/>
+                </svg>
+                <div class="flex gap-2">
                 {{ range . }}
                 <span
-                    class="inline-flex py-1 leading-4 content-center justify-center px-1 text-blue-600 hover:text-blue-800 duration-200"><a
+                    class="inline-flex py-1 leading-4 content-center justify-center text-blue-600 hover:text-blue-800 duration-200"><a
                         href='{{ "categories" | absURL}}/{{ . | urlize }}'>{{ . }}</a></span>
                 {{ end }}
+                </div>
             </div>
             {{ end }}
         </section>
         {{ if .Params.image }}
         <img class="my-4" src="{{ .Params.image | absURL }}">
         {{ end }}
-        <div class="content prose md:prose-lg lg:prose-xl max-w-none py-1">{{.Content}}</div>
-        <div class="share m-2 grid grid-cols-2 lg:grid-cols-3 gap-2">
+        <div class="content prose prose-sm md:prose-base lg:prose-lg max-w-none py-1">{{.Content}}</div>
+        <div class="share m-2 grid grid-cols-2 lg:grid-cols-4 gap-2">
             <a href="https://twitter.com/intent/tweet?url={{ .Permalink }}&text={{ .Title }}" target="_blank"
-                title="Post" class="share-button x">
-                <div class="text-white text-center">
-                    <span class="icon-x text-lg mr-2"></span>X
+                title="Post" class="share-button bg-black">
+                <div class="text-white text-center flex flex-row gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                    </svg>X
                 </div>
             </a>
             <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}&t={{ .Title }}" target="_blank"
-                title="Facebook" class="share-button facebook">
-                <div class="text-white text-center">
-                    <span class="icon-facebook text-lg mr-2"></span>Facebook
+                title="Facebook" class="share-button bg-[#1778F2]">
+                <div class="text-white text-center flex flex-row gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>Facebook
                 </div>
             </a>
-            <a href="https://b.hatena.ne.jp/add?mode=confirm&url={{ .Permalink }}&title={{ .Title }}" target="_blank"
-                title="hatena" class="share-button hatena">
-                <div class="text-white text-center">
-                    <span class="icon-hatenabookmark text-lg mr-2"></span>Hatena
+            <a href="https://timeline.line.me/social-plugin/share?url={{ .Permalink }}" class="share-button bg-[#00c300]">
+                <div class="text-white text-center flex flex-row gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"/>
+                    </svg>LINE
                 </div>
             </a>
-            <a href="https://getpocket.com/edit?url={{ .Permalink }}&title={{ .Title }}" target="_blank" title="pocket"
-                class="share-button pocket">
-                <div class="text-white text-center">
-                    <span class="icon-get-pocket text-lg mr-2"></span>Pocket
-                </div>
-            </a>
-            <a href="https://timeline.line.me/social-plugin/share?url={{ .Permalink }}" class="share-button line">
-                <div class="text-white text-center">
-                    <span class="icon-line text-lg mr-2"></span>LINE
-                </div>
-            </a>
-            <a href="javascript:OnClickURL();" class="share-button url" title="Copy to Clipboard"
+            <a href="javascript:OnClickURL();" class="share-button bg-neutral-800" title="Copy to Clipboard"
                 data-clipboard-text="{{ .Title }} {{ .Permalink }}" id="url">
-                <div class="text-white text-center">
-                    <span class="icon-link text-lg mr-2"></span>Copy
+                <div class="text-white text-center flex flex-row gap-2 items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/>
+                    </svg>Copy
                 </div>
             </a>
         </div>
         <hr class="py-4">
-        {{- with .Site.Params.disqusShortname }}
         <div class="mb-3">
-            {{ template "_internal/disqus.html" . }}
+            {{ partial "comments.html" . }}
         </div>
         <hr class="py-4">
-        {{ end }}
         <aside id="meta">
             <div class="grid grid-cols-2">
                 <div class="col-span-1">
                     {{ with .PrevInSection }}
                     <a class="previous lg:text-2xl" href="{{.Permalink}}">
                         <div
-                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                            <span class="icon-keyboard_arrow_left"></span> {{.Title | truncate 10 "…"}}
+                            class="transition-colors duration-300 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1 flex flex-row items-center justify-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+                            </svg> {{.Title | truncate 18}}
                         </div>
                     </a>
                     {{ end }}
@@ -94,8 +103,10 @@
                 {{ with .NextInSection }}
                 <a class="next lg:text-2xl" href="{{.Permalink}}">
                     <div
-                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1">
-                        {{.Title | truncate 10 "…"}} <span class="icon-keyboard_arrow_right"></span>
+                        class="transition-colors duration-300 col-span-1 border border-gray-600 hover:border-black h-auto m-3 text-center py-3 lg:py-1 flex flex-row items-center justify-center gap-2">
+                        {{.Title | truncate 18}} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                        </svg>
                     </div>
                 </a>
                 {{ end }}

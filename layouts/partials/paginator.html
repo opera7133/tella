@@ -19,7 +19,7 @@
     {{ if eq . $pag }}
     <!-- Current Page -->
     <li><a href="{{ .URL }}"
-        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-blue-600 border-blue-600 text-white hover:border-blue-700 dark:border-gray-600">{{
+        class="shadow-md mx-2 py-3 px-5 rounded-full relative block border-white border-0 duration-100 bg-blue-600 text-white hover:border-blue-700 dark:border-gray-600">{{
         .PageNumber }}</a></li>
     {{ else if and (ge .PageNumber (sub $pag.PageNumber 2)) (le .PageNumber (add $pag.PageNumber 2)) }}
     {{ $.Scratch.Set "dot_rendered" false }}

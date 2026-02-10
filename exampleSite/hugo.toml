@@ -10,17 +10,18 @@ enableRobotsTXT = true
 # Please enable this feature if the site is available in Japanese, Chinese or Korean.
 #hasCJKLanguage = true
 
-# If you're using Google Analytics, you can enable this feature.
-#googleAnalytics = "UA-12345678-1"
+[services]
+  [services.googleAnalytics]
+  # If you're using Google Analytics, you can enable this feature.
+  #id = "G-1234567890"
 
-# Disqus Comment System
-#disqusShortname = ""
+  [services.disqus]
+  # Disqus Comment System
+  #shortname = "your-disqus-shortname"
 
 [params]
-
   showBlog = true
   mainSections = ['blog']
-
   googleFonts = true
 
   [params.logo]
@@ -35,8 +36,11 @@ enableRobotsTXT = true
     name = "Tella"
 
   [params.icon]
-    #If you want to use FontAwesome, set this parameter to true.
-    fontawesome = true
+    # If you want to use FontAwesome, set this parameter to true.
+    #fontawesome = true
+
+    # You can also use Bootstrap Icons.
+    bootstrap = true
 
   [params.homepage_meta_tags]
     meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
@@ -49,8 +53,23 @@ enableRobotsTXT = true
     meta_twitter_site = "@username"
     meta_twitter_creator = "@username"
 
-[menu]
+  [params.giscus]
+    # Giscus Comment System
+    # See https://giscus.app for setup instructions
+    #repo = "your-repo"
+    #repo_id = "your-repo-id"
+    #category = "Announcements"
+    #category_id = "your-category-id"
+    #mapping = "pathname"
+    #strict = "0"
+    #reactions_enabled = "1"
+    #emit_metadata = "0"
+    #input_position = "bottom"
+    #theme = "preferred_color_scheme"
+    #lang = "en"
+    #loading = "lazy"
 
+[menu]
   [[menu.main]]
     identifier = "products"
     name = "Products"
@@ -79,10 +98,54 @@ enableRobotsTXT = true
   [[menu.footer]]
     name = "Home"
     url = "/"
-      weight = 1
+    weight = 1
 
   [[menu.footer]]
     name = "Github"
     url = "https://github.com/opera7133/tella"
-    pre = "<i class='icon-github text-2xl'></i>"
-      weight = 2
+    #pre = "<i class='bi bi-github text-2xl'></i>"
+    weight = 2
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+
+[privacy]
+  [privacy.vimeo]
+    disabled = false
+    simple = false
+
+  [privacy.x]
+    disabled = false
+    enableDNT = true
+    simple = false
+
+  [privacy.instagram]
+    disabled = false
+    simple = false
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'

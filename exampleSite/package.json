@@ -7,18 +7,13 @@
   "author": "wamo <ainznino@pm.me>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently npm:watch:*",
-    "watch:tw": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css --watch",
-    "watch:hugo": "hugo server",
-    "build": "tailwindcss -i ./themes/tella/assets/css/main.css -o ./themes/tella/assets/css/style.css && hugo --minify"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.12",
-    "@tailwindcss/typography": "^0.5.12",
-    "autoprefixer": "^10.4.19",
-    "concurrently": "^9.0.0",
-    "postcss": "^8.4.38",
-    "postcss-cli": "^11.0.0",
-    "tailwindcss": "^4.0.1"
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/forms": "^0.5.11",
+    "tailwindcss": "^4.1.11"
   }
 }
