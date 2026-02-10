@@ -5,11 +5,11 @@
             <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         </div>
         {{ end }}
-        <div class="p-6 flex flex-col flex-grow">
+        <div class="p-6 flex flex-col grow">
             <h2 class="text-xl font-semibold mb-3 text-tlgray-800 group-hover:text-blue-600 transition-colors line-clamp-2">
                 {{ .Title }}
             </h2>
-            <p class="text-tlgray-400 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+            <p class="text-tlgray-400 text-sm leading-relaxed line-clamp-3 mb-4 grow">
                 {{ .Description | default .Summary | truncate 120 }}
             </p>
             <div class="mt-auto pt-4 items-center text-sm font-semibold text-blue-600 group-hover:translate-x-1 transition-transform inline-flex">

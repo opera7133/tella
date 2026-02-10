@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
+    <div class="relative flex items-center justify-center mb-8">
+        <span class="text-[10rem] md:text-[15rem] font-bold text-gray-100 select-none leading-none">404</span>
+        <div class="absolute inset-0 flex flex-col items-center justify-center pt-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-black mb-2">Page Not Found</h1>
+            <p class="text-lg text-gray-500 font-medium tracking-wide">NOT FOUND</p>
+        </div>
+    </div>
+
+    <div class="max-w-md mx-auto mb-10">
+        <p class="text-gray-600 leading-relaxed">
+            Sorry, the page you are looking for could not be found.<br>
+            The page you are trying to access may have been deleted or the URL may have changed.
+        </p>
+    </div>
+
+    <a href="{{ site.BaseURL }}" class="inline-flex items-center px-8 py-3 bg-black text-white font-medium hover:bg-gray-800 transition-all duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Home
+    </a>
+</div>
+{{ end }}

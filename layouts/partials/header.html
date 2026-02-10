@@ -11,7 +11,7 @@
         </ul>
     </div>
     <nav class="flex items-center justify-between flex-wrap bg-opacity-100 p-8">
-        <div class="flex items-center flex-shrink-0 text-xl text-grey-900 mr-6">
+        <div class="flex items-center shrink-0 text-xl text-grey-900 mr-6">
             <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}"
                     class="{{ .Site.Params.logo.size }} mr-3" src="{{ .Site.Params.logo.main | relURL }}"></a>
         </div>
@@ -22,8 +22,8 @@
                 <span class="bottom"></span>
             </div>
         </div>
-        <div class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
-            <div class="text-lg lg:flex-grow">
+        <div class="hidden w-full grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:grow">
             </div>
             <div class="text-lg">
                 {{ range .Site.Menus.main }}
