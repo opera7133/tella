@@ -1,11 +1,13 @@
 {{ if .Site.Config.Services.Disqus.Shortname }}
-<div class="comments">
+<div class="comments mb-3">
   {{ template "_internal/disqus.html" . }}
 </div>
+<hr class="py-4">
 {{ end }}
 
 {{ if .Site.Params.giscus.repo }}
-<div class="comments">
+<div class="comments mb-3">
   {{ partial "giscus.html" . }}
 </div>
+<hr class="py-4">
 {{ end }}

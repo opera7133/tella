@@ -7,8 +7,8 @@
     src='{{ "/img/default.jpg" | relURL }}'>
   {{ end }}
   <div
-    class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 relative pl-4 p-6 justify-between leading-normal max-w-full w-full">
-    <div class="text-gray-900 font-bold text-xl mb-2">{{ .Title }}</div>
+    class="border-r border-b border-l border-neutral-300 lg:border-l-0 lg:border-t relative pl-4 p-6 justify-between leading-normal max-w-full w-full">
+    <div class="text-gray-900 font-semibold text-xl mb-2">{{ .Title }}</div>
     <p class="text-gray-700 text-base pb-5">{{ substr .Summary 0 130 | plainify | htmlUnescape }}...</p>
     <p class="text-sm text-gray-600 flex flex-row items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

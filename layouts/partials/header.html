@@ -1,9 +1,9 @@
 <header>
-    <div id="overlay">
-        <ul class="text-center list-none text-white text-3xl">
+    <div id="overlay" class="fixed inset-0 bg-black/90 backdrop-blur-md flex justify-center items-center z-50 transition-opacity duration-300 opacity-0 pointer-events-none" aria-hidden="true">
+        <ul class="text-center list-none text-white space-y-6">
             {{ range .Site.Menus.main }}
-            <li class="p-2">
-                <a href="{{ .URL | safeURL }}">
+            <li class="p-2 transform transition-transform hover:scale-110">
+                <a href="{{ .URL | safeURL }}" class="text-4xl font-semibold hover:text-gray-300 transition-colors">
                     <span>{{ .Name }}</span>
                 </a>
             </li>
@@ -22,7 +22,7 @@
                 <span class="bottom"></span>
             </div>
         </div>
-        <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+        <div class="hidden w-full flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
             <div class="text-lg lg:flex-grow">
             </div>
             <div class="text-lg">

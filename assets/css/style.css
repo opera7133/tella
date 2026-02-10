@@ -123,24 +123,10 @@ html {
 }
 
 /* menu bg */
-#overlay {
-  visibility: hidden;
-  display: flex;
-  transition: 0.3s linear;
-  position: absolute;
-  z-index: 900;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #222;
-  opacity: 0;
-}
+/* menu bg */
 #overlay.open {
-  visibility: visible;
-  opacity: 0.95;
+  opacity: 1;
+  pointer-events: auto;
 }
 body.scroll-lock {
   position: fixed;
@@ -160,7 +146,7 @@ body.scroll-lock {
   height: 3rem;
   display: flex;
   flex-direction: column;
-  z-index: 1000;
+  z-index: 30;
   padding-top: 0.75em;
   padding-bottom: 0.75em;
   cursor: pointer;

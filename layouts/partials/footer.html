@@ -2,7 +2,7 @@
   {{ if not .IsHome }}
   <script>
     function OnClickURL() {
-      var url = document.getElementById("url").dataset.clipboardText;
+      const url = document.getElementById("url").dataset.clipboardText;
       navigator.clipboard.writeText(url).then(function() {
         alert('Copied the URL and title.');
       }).catch(function(error) {
@@ -13,9 +13,9 @@
   {{ end }}
   <script>
     function toggleNav() {
-      var hamburger = document.getElementById("hamburgerbtn");
-      var overlay = document.getElementById("overlay");
-      var body = document.body;
+      const hamburger = document.getElementById("hamburgerbtn");
+      const overlay = document.getElementById("overlay");
+      const body = document.body;
 
       hamburger.addEventListener("click", function () {
         overlay.classList.toggle("open");

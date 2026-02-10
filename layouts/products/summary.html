@@ -1,8 +1,23 @@
-<a href="{{ .Permalink }}">
-    <div class="summary border p-3">
-        <h2 class="text-3xl">
-            {{ .Title }}
-        </h2>
-        <p>{{ .Description }}</p>
-    </div>
-</a>
+<div class="h-full group bg-white transition-all duration-300 border border-tlgray-200 overflow-hidden">
+    <a href="{{ .Permalink }}" class="h-full flex flex-col">
+        {{ if .Params.image }}
+        <div class="aspect-video w-full overflow-hidden bg-gray-100">
+            <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        {{ end }}
+        <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-3 text-tlgray-800 group-hover:text-blue-600 transition-colors line-clamp-2">
+                {{ .Title }}
+            </h2>
+            <p class="text-tlgray-400 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow">
+                {{ .Description | default .Summary | truncate 120 }}
+            </p>
+            <div class="mt-auto pt-4 items-center text-sm font-semibold text-blue-600 group-hover:translate-x-1 transition-transform inline-flex">
+                View Details
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+                </svg>
+            </div>
+        </div>
+    </a>
+</div>
