@@ -73,14 +73,6 @@ html {
 .animation-slide {
   position: relative;
 }
-.swiper-button-prev:after,
-.swiper-container-rtl,
-.swiper-button-next:after {
-  color: #fff;
-}
-.swiper-pagination-bullet {
-  background: #fff;
-}
 
 /* menu */
 .mopen {
@@ -214,17 +206,6 @@ body.scroll-lock {
   border-bottom: dashed 1px lightgray;
 }
 
-/* hljs */
-.hljs-ln-code {
-  padding-left: 0.8em !important;
-}
-.content code table.hljs-ln {
-  margin: 0;
-}
-.content code table.hljs-ln tr {
-  border-bottom-width: 0px;
-}
-
 /* scroll bar */
 
 ::-webkit-scrollbar {
@@ -238,14 +219,4 @@ body.scroll-lock {
   background-color: #121212;
   border-radius: 10px;
   box-shadow: 0 0 0 1px #121212;
-}
-
-/* share */
-.share-button {
-  padding-top: 10px;
-  padding-bottom: 8px;
-  transition: all 0.3s;
-}
-.share-button:hover {
-  opacity: 0.7;
 }
