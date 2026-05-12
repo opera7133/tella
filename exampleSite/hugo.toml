@@ -20,91 +20,97 @@ enableRobotsTXT = true
   #shortname = "your-disqus-shortname"
 
 [params]
-  showBlog = true
-  mainSections = ['blog']
-  googleFonts = true
+showBlog = true
+mainSections = ['blog']
+googleFonts = true
 
   [params.logo]
-    main = "img/logo/logo.svg"
-    alt = "Tella Logo"
+  main = "img/logo/logo.svg"
+  alt = "Tella Logo"
 
-    # The size parameter is the class name of tailwindcss
-    # https://tailwindcss.com/
-    size = "h-14"
+  # The size parameter is the class name of tailwindcss
+  # https://tailwindcss.com/
+  size = "h-14"
 
   [params.site]
-    name = "Tella"
+  name = "Tella"
 
   [params.icon]
-    # If you want to use FontAwesome, set this parameter to true.
-    #fontawesome = true
+  # If you want to use FontAwesome, set this parameter to true.
+  #fontawesome = true
 
-    # You can also use Bootstrap Icons.
-    bootstrap = true
+  # You can also use Bootstrap Icons.
+  bootstrap = true
+
+  [params.share]
+  # If you want to use share buttons, set this parameter to true.
+  enable = true
+  # Uncomment and edit to limit which services are shown
+  # services = ["twitter", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
 
   [params.homepage_meta_tags]
-    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
-    meta_og_title = "Tella"
-    meta_og_type = "website"
-    meta_og_url = "https://tella.pages.dev"
-    meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
-    meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
-    meta_twitter_card = "summary_large_image"
-    meta_twitter_site = "@username"
-    meta_twitter_creator = "@username"
+  meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+  meta_og_title = "Tella"
+  meta_og_type = "website"
+  meta_og_url = "https://tella.pages.dev"
+  meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
+  meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+  meta_twitter_card = "summary_large_image"
+  meta_twitter_site = "@username"
+  meta_twitter_creator = "@username"
 
   [params.giscus]
-    # Giscus Comment System
-    # See https://giscus.app for setup instructions
-    #repo = "your-repo"
-    #repo_id = "your-repo-id"
-    #category = "Announcements"
-    #category_id = "your-category-id"
-    #mapping = "pathname"
-    #strict = "0"
-    #reactions_enabled = "1"
-    #emit_metadata = "0"
-    #input_position = "bottom"
-    #theme = "preferred_color_scheme"
-    #lang = "en"
-    #loading = "lazy"
+  # Giscus Comment System
+  # See https://giscus.app for setup instructions
+  #repo = "your-repo"
+  #repo_id = "your-repo-id"
+  #category = "Announcements"
+  #category_id = "your-category-id"
+  #mapping = "pathname"
+  #strict = "0"
+  #reactions_enabled = "1"
+  #emit_metadata = "0"
+  #input_position = "bottom"
+  #theme = "preferred_color_scheme"
+  #lang = "en"
+  #loading = "lazy"
 
 [menu]
   [[menu.main]]
-    identifier = "products"
-    name = "Products"
-    url = "/products/"
-    weight = 1
+  identifier = "products"
+  name = "Products"
+  url = "/products/"
+  weight = 1
 
   [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 2
+  identifier = "blog"
+  name = "Blog"
+  url = "/blog/"
+  weight = 2
 
   [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 3
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 3
 
   [[menu.main]]
-    identifier = "contact"
-    name = "Contact"
-    url = "/contact/"
-    weight = 4
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 4
 
   # Footer Menu
   [[menu.footer]]
-    name = "Home"
-    url = "/"
-    weight = 1
+  name = "Home"
+  url = "/"
+  weight = 1
 
   [[menu.footer]]
-    name = "Github"
-    url = "https://github.com/opera7133/tella"
-    #pre = "<i class='bi bi-github text-2xl'></i>"
-    weight = 2
+  name = "Github"
+  url = "https://github.com/opera7133/tella"
+  #pre = "<i class='bi bi-github text-2xl'></i>"
+  weight = 2
 
 [taxonomies]
 category = "categories"
@@ -113,39 +119,39 @@ series = "series"
 
 [privacy]
   [privacy.vimeo]
-    disabled = false
-    simple = false
+  disabled = false
+  simple = false
 
   [privacy.x]
-    disabled = false
-    enableDNT = true
-    simple = false
+  disabled = false
+  enableDNT = true
+  simple = false
 
   [privacy.instagram]
-    disabled = false
-    simple = false
+  disabled = false
+  simple = false
 
   [privacy.youtube]
-    disabled = false
-    privacyEnhanced = true
+  disabled = false
+  privacyEnhanced = true
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+    unsafe = true
 
 [build]
   [build.buildStats]
-    enable = true
+  enable = true
   [[build.cachebusters]]
-    source = 'assets/notwatching/hugo_stats\.json'
-    target = 'css'
+  source = 'assets/notwatching/hugo_stats\.json'
+  target = 'css'
 
 [module]
   [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
+  source = 'assets'
+  target = 'assets'
   [[module.mounts]]
-    disableWatch = true
-    source = 'hugo_stats.json'
-    target = 'assets/notwatching/hugo_stats.json'
+  disableWatch = true
+  source = 'hugo_stats.json'
+  target = 'assets/notwatching/hugo_stats.json'
