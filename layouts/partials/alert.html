@@ -1,7 +1,13 @@
-{{if .Site.Data.alert}}
+{{ if ge hugo.Version "0.156.0" }} {{ if hugo.Data.alert }}
 <div class="bg-red-600 py-2">
-    {{ range .Site.Data.alert }}
-    <p class="ml-2 text-base text-white">>> {{ .date }} {{ .alert }}</p>
-    {{ end }}
+  {{ range hugo.Data.alert }}
+  <p class="ml-2 text-base text-white">>> {{ .date }} {{ .alert }}</p>
+  {{ end }}
 </div>
-{{end}}
+{{ end }} {{ else }} {{if .Site.Data.alert}}
+<div class="bg-red-600 py-2">
+  {{ range .Site.Data.alert }}
+  <p class="ml-2 text-base text-white">>> {{ .date }} {{ .alert }}</p>
+  {{ end }}
+</div>
+{{ end }} {{ end }}
