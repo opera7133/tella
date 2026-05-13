@@ -46,7 +46,7 @@ googleFonts = true
   # If you want to use share buttons, set this parameter to true.
   enable = true
   # Uncomment and edit to limit which services are shown
-  # services = ["twitter", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
+  # services = ["twitter", "mastodon", "facebook", "line", "linkedin", "whatsapp", "mail", "copy"]
 
   [params.homepage_meta_tags]
   meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
